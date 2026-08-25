@@ -16,7 +16,7 @@ Primary user: the owner or admin of a small-to-medium recording studio, usually 
 
 ## Product Purpose
 
-StudioPulse is a SaaS panel for recording studios that consolidates session/room scheduling, finances (income/expense/profit), client proposals/quotes exportable to branded PDF, payment-collection reminders, and private-link delivery of mixes/masters. This landing page's job is to get studio owners to either try the live demo or submit the "solicitar acceso" lead form so the team can activate their account.
+FoldBack is a SaaS panel for recording studios that consolidates session/room scheduling, finances (income/expense/profit), client proposals/quotes exportable to branded PDF, payment-collection reminders, and private-link delivery of mixes/masters. This landing page's job is to get studio owners to either try the live demo or submit the "solicitar acceso" lead form so the team can activate their account.
 
 ## Positioning
 
@@ -24,7 +24,7 @@ StudioPulse is a SaaS panel for recording studios that consolidates session/room
 
 ## Operating Context
 
-Studio owner works from browser (desktop or mobile), no install required, logs in with username/password. Key workflows the product supports: booking sessions/rooms and catching schedule overlaps, tracking monthly income/expense/profit, generating and exporting branded proposals to PDF, sending balance-due reminders via WhatsApp/email, and sharing mixes/masters via private link. The live demo at `blacklab-demo.vercel.app` is embedded directly on the landing page (hero iframe + feature-card iframes) as real product evidence, not a mockup.
+Studio owner works from browser (desktop or mobile), no install required, logs in with username/password. Key workflows the product supports: booking sessions/rooms and catching schedule overlaps, tracking monthly income/expense/profit, generating and exporting branded proposals to PDF, sending balance-due reminders via WhatsApp/email, and sharing mixes/masters via private link. The live demo at `foldback-demo.vercel.app` is embedded directly on the landing page (hero iframe + feature-card iframes) as real product evidence, not a mockup.
 
 ## Capabilities and Constraints
 
@@ -32,13 +32,13 @@ Studio owner works from browser (desktop or mobile), no install required, logs i
 - Branding: studio can set its own name, logo, and service catalog, reflected in proposals/receipts.
 - Currency support in proposals: MXN, USD, EUR.
 - Lead capture backend: `/api/lead` (Vercel serverless) writes to Supabase table `sp_leads` using the service-role key server-side.
-- Internal/demo codename is "Blacklab" (visible in the Vercel project name `blacklab-landing` and demo domain `blacklab-demo.vercel.app`); "StudioPulse" is the public/commercial brand name. Do not surface "Blacklab" in user-facing copy.
+- Former internal/demo codename was "Blacklab"; the product was originally launched publicly as "StudioPulse" and was renamed again to "FoldBack" after the "StudioPulse" name became unavailable. Do not surface "Blacklab" or "StudioPulse" in user-facing copy going forward.
 
 ## Brand Commitments
 
-- Name: StudioPulse.
-- Logo assets: `studiopulse-logo.svg` (light), `studiopulse-logo-dark.svg` (dark), `icon.svg` favicon, `blacklab-logo-trans.png` (legacy/internal asset — verify before use).
-- Contact email: hola@studiopulse.app.
+- Name: FoldBack (renamed from StudioPulse; do not reuse the old name in new copy).
+- Logo: `icon.svg` (waveform mark, used as favicon and as the icon half of the live nav/hero wordmark lockup) + a live HTML "Fold<span>Back</span>" text lockup (white + accent-2 blue), not a flattened image — this lets the nav logo and the animated hero logo stay pixel-identical and easy to re-theme. The old flattened `studiopulse-logo.svg` / `studiopulse-logo-dark.svg` / `blacklab-logo-trans.png` files are legacy and unused in `index.html`.
+- Contact email: hola@foldback.com.
 - Existing dark theme with blue accent (`--accent:#3987e5`) is the current committed visual direction; treat as incumbent system rather than open ground unless the user asks for a redesign.
 
 ## Evidence on Hand

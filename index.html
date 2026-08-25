@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>StudioPulse · El panel para tu estudio de grabación</title>
+<title>FoldBack · El panel para tu estudio de grabación</title>
 <meta name="description" content="Sesiones, finanzas, propuestas y entregas de tu estudio de grabación en un solo panel. Prueba el demo." />
-<meta property="og:title" content="StudioPulse · El panel para tu estudio de grabación" />
+<meta property="og:title" content="FoldBack · El panel para tu estudio de grabación" />
 <meta property="og:description" content="Administra sesiones, finanzas, propuestas y entregas de tu estudio en un solo lugar." />
 <link rel="icon" href="/icon.svg" type="image/svg+xml" />
 <style>
@@ -321,7 +321,10 @@
   /* Footer */
   footer{border-top:1px solid var(--line);padding:40px 0;color:var(--muted);font-size:13.5px}
   footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
-  footer img{height:22px;opacity:.9}
+  .footer-logo{display:flex;align-items:center;gap:7px;opacity:.9}
+  .footer-logo img{height:22px;display:block}
+  .footer-logo span{font-family:var(--sans);font-weight:700;font-size:14.5px;letter-spacing:-.02em;color:var(--ink-2)}
+  .footer-logo span i{font-style:normal;color:var(--accent-2)}
 
   /* Reveal on scroll (visible por defecto; solo se oculta pre-entrada si JS confirma que puede animarla de vuelta) */
   .reveal{opacity:1;transform:none}
@@ -352,20 +355,20 @@
 
   <div class="logo-morph" id="logo-morph" aria-hidden="true">
     <img src="icon.svg" alt="" class="logo-morph-icon" />
-    <span class="logo-morph-text">Studio<i>Pulse</i></span>
+    <span class="logo-morph-text">Fold<i>Back</i></span>
   </div>
 
   <nav class="nav">
     <div class="wrap">
-      <a href="#" aria-label="StudioPulse" class="nav-logo">
+      <a href="#" aria-label="FoldBack" class="nav-logo">
         <img src="icon.svg" alt="" class="nav-logo-icon" />
-        <span class="nav-logo-text">Studio<i>Pulse</i></span>
+        <span class="nav-logo-text">Fold<i>Back</i></span>
       </a>
       <div class="nav-links">
         <a href="#funciones">Funciones</a>
         <a href="#precios">Precios</a>
         <a href="#faq">Preguntas</a>
-        <a class="nav-cta" href="https://studiopulse-demo.vercel.app" target="_blank" rel="noopener">Ver demo</a>
+        <a class="nav-cta" href="https://foldback-demo.vercel.app" target="_blank" rel="noopener">Ver demo</a>
       </div>
     </div>
   </nav>
@@ -379,18 +382,18 @@
     <div class="hero-content">
       <div class="hero-logo-space" aria-hidden="true"></div>
       <span class="eyebrow">Software para estudios de grabación</span>
-      <h1>Escala tu estudio <i>sin escalar el caos.</i></h1>
+      <h1 id="hero-title">Escala tu estudio <i>sin escalar el caos.</i></h1>
       <p class="sub">Sesiones, finanzas, propuestas y entregas de tu estudio en un solo panel. Adiós al Excel y a los post-its.</p>
       <div class="hero-cta">
-        <a class="btn btn-primary" href="https://studiopulse-demo.vercel.app" target="_blank" rel="noopener">Ver el demo →</a>
+        <a class="btn btn-primary" href="https://foldback-demo.vercel.app" target="_blank" rel="noopener">Ver el demo →</a>
         <a class="btn btn-ghost" href="#contacto">Solicitar acceso</a>
       </div>
     </div>
 
-    <a class="float-frame" href="https://studiopulse-demo.vercel.app" target="_blank" rel="noopener">
-      <div class="float-frame-bar"><i></i><i></i><i></i><span class="float-frame-url">studiopulse-demo.vercel.app</span></div>
+    <a class="float-frame" href="https://foldback-demo.vercel.app" target="_blank" rel="noopener">
+      <div class="float-frame-bar"><i></i><i></i><i></i><span class="float-frame-url">foldback-demo.vercel.app</span></div>
       <div class="float-view">
-        <iframe src="https://studiopulse-demo.vercel.app/estudio" title="Demo del panel" loading="lazy" scrolling="no"></iframe>
+        <iframe src="https://foldback-demo.vercel.app/estudio" title="Demo del panel" loading="lazy" scrolling="no"></iframe>
       </div>
     </a>
     <div class="hero-spacer"></div>
@@ -415,7 +418,7 @@
       </div>
       <div class="compare-grid reveal">
         <div class="compare-col now">
-          <span class="tag"><i></i>Hoy, sin StudioPulse</span>
+          <span class="tag"><i></i>Hoy, sin FoldBack</span>
           <ul>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6 18 18M18 6 6 18"/></svg> Sesiones agendadas por WhatsApp o en un cuaderno.</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6 18 18M18 6 6 18"/></svg> Cotizaciones armadas a mano en Word, cada vez desde cero.</li>
@@ -424,7 +427,7 @@
           </ul>
         </div>
         <div class="compare-col after">
-          <span class="tag"><i></i>Con StudioPulse</span>
+          <span class="tag"><i></i>Con FoldBack</span>
           <ul>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Calendario del estudio con salas, tarifas y anticipos en un solo lugar.</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Propuestas con tu marca, generadas en minutos desde una plantilla.</li>
@@ -494,7 +497,7 @@
           <div class="mac-notch"></div>
           <div class="mac-screen">
             <div class="mac-screen-inner">
-              <img class="shot" src="dashboard-resumen.png" alt="Panel de StudioPulse abierto en un MacBook Pro de 14 pulgadas" loading="lazy" />
+              <img class="shot" src="dashboard-resumen.png" alt="Panel de FoldBack abierto en un MacBook Pro de 14 pulgadas" loading="lazy" />
             </div>
           </div>
           <div class="mac-base"></div>
@@ -502,13 +505,13 @@
         <div class="device device-ipad">
           <div class="ipad-frame">
             <div class="ipad-cam"></div>
-            <img class="shot" src="demo-calendario-card.png" alt="Calendario de StudioPulse abierto en un iPad de 13 pulgadas" loading="lazy" />
+            <img class="shot" src="demo-calendario-card.png" alt="Calendario de FoldBack abierto en un iPad de 13 pulgadas" loading="lazy" />
           </div>
         </div>
         <div class="device device-iphone">
           <div class="iphone-frame">
             <div class="iphone-island"></div>
-            <img class="shot" src="demo-sesiones-card.png" alt="Lista de sesiones de StudioPulse abierta en un iPhone 17 Pro Max" loading="lazy" />
+            <img class="shot" src="demo-sesiones-card.png" alt="Lista de sesiones de FoldBack abierta en un iPhone 17 Pro Max" loading="lazy" />
           </div>
         </div>
       </div>
@@ -519,49 +522,49 @@
   <section class="peek reveal">
     <div class="wrap">
       <div class="sec-head" style="margin-bottom:32px">
-        <h2>Así se ve StudioPulse por dentro.</h2>
+        <h2>Así se ve FoldBack por dentro.</h2>
         <p>Todas las capturas de aquí abajo son del demo real, sin retoques ni maquetas.</p>
       </div>
-      <a class="peek-frame" href="https://studiopulse-demo.vercel.app/estudio" target="_blank" rel="noopener">
-        <div class="peek-bar"><i></i><i></i><i></i><span>studiopulse-demo.vercel.app/estudio</span></div>
-        <img src="dashboard-resumen.png" alt="Resumen del estudio en StudioPulse: sesiones pendientes, ingresos y gastos del mes, utilidad, saldo por cobrar y gráficas de ingresos vs. gastos" width="2800" height="1800" loading="lazy" />
+      <a class="peek-frame" href="https://foldback-demo.vercel.app/estudio" target="_blank" rel="noopener">
+        <div class="peek-bar"><i></i><i></i><i></i><span>foldback-demo.vercel.app/estudio</span></div>
+        <img src="dashboard-resumen.png" alt="Resumen del estudio en FoldBack: sesiones pendientes, ingresos y gastos del mes, utilidad, saldo por cobrar y gráficas de ingresos vs. gastos" width="2800" height="1800" loading="lazy" />
       </a>
       <div class="peek-caption">
         <p>Sesiones pendientes, ingresos y gastos del mes, utilidad, saldo por cobrar, ticket promedio y tareas pendientes, todo en la misma pantalla al entrar.</p>
       </div>
 
       <div class="tour-wrap">
-        <div class="tour" id="tour" tabindex="0" aria-label="Galería de funciones de StudioPulse, desliza o usa las flechas">
+        <div class="tour" id="tour" tabindex="0" aria-label="Galería de funciones de FoldBack, desliza o usa las flechas">
           <div class="tour-card">
-            <div class="tour-shot"><img src="demo-sesiones-card.png" alt="Lista de sesiones en StudioPulse con fecha, cliente, tipo, sala, total, saldo y estado" loading="lazy" /></div>
+            <div class="tour-shot"><img src="demo-sesiones-card.png" alt="Lista de sesiones en FoldBack con fecha, cliente, tipo, sala, total, saldo y estado" loading="lazy" /></div>
             <div class="tour-body">
               <h3>Agenda y sesiones</h3>
               <p>Cada sesión con su cliente, sala, total y estado de pago, sin buscar en tres chats distintos.</p>
             </div>
           </div>
           <div class="tour-card">
-            <div class="tour-shot"><img src="demo-calendario-card.png" alt="Vista semanal del calendario de StudioPulse con sesiones agendadas por día y sala" loading="lazy" /></div>
+            <div class="tour-shot"><img src="demo-calendario-card.png" alt="Vista semanal del calendario de FoldBack con sesiones agendadas por día y sala" loading="lazy" /></div>
             <div class="tour-body">
               <h3>Calendario semanal</h3>
               <p>Ve la semana completa por sala y detecta empalmes antes de que sean un problema.</p>
             </div>
           </div>
           <div class="tour-card">
-            <div class="tour-shot"><img src="demo-clientes-card.png" alt="Tarjetas de clientes en StudioPulse con nombre, tipo, contacto y sesiones por cliente" loading="lazy" /></div>
+            <div class="tour-shot"><img src="demo-clientes-card.png" alt="Tarjetas de clientes en FoldBack con nombre, tipo, contacto y sesiones por cliente" loading="lazy" /></div>
             <div class="tour-body">
               <h3>Clientes</h3>
               <p>Artistas, bandas y proyectos con su contacto y sesiones a la mano, sin depender de tu memoria.</p>
             </div>
           </div>
           <div class="tour-card">
-            <div class="tour-shot"><img src="demo-finanzas-card.png" alt="Movimientos financieros en StudioPulse con ingresos y gastos del mes por concepto y categoría" loading="lazy" /></div>
+            <div class="tour-shot"><img src="demo-finanzas-card.png" alt="Movimientos financieros en FoldBack con ingresos y gastos del mes por concepto y categoría" loading="lazy" /></div>
             <div class="tour-body">
               <h3>Finanzas</h3>
               <p>Cada ingreso y gasto con fecha, categoría y método, con la utilidad real del mes, no la que adivinas.</p>
             </div>
           </div>
           <div class="tour-card">
-            <div class="tour-shot"><img src="demo-cobranza-card.png" alt="Panel de cobranza en StudioPulse con saldos por cobrar y botones para recordar por WhatsApp o correo" loading="lazy" /></div>
+            <div class="tour-shot"><img src="demo-cobranza-card.png" alt="Panel de cobranza en FoldBack con saldos por cobrar y botones para recordar por WhatsApp o correo" loading="lazy" /></div>
             <div class="tour-body">
               <h3>Cobranza sin perseguir</h3>
               <p>Los saldos pendientes listos con un botón para WhatsApp o correo, con el mensaje ya escrito.</p>
@@ -679,7 +682,7 @@
       <h2>Pon tu estudio en orden esta semana.</h2>
       <p>Explora el demo con datos de ejemplo y, cuando estés listo, activamos tu cuenta.</p>
       <div class="hero-cta">
-        <a class="btn btn-primary" href="https://studiopulse-demo.vercel.app" target="_blank" rel="noopener">Ver el demo →</a>
+        <a class="btn btn-primary" href="https://foldback-demo.vercel.app" target="_blank" rel="noopener">Ver el demo →</a>
         <a class="btn btn-ghost" href="#contacto">Solicitar acceso</a>
       </div>
     </div>
@@ -688,14 +691,30 @@
 
   <footer>
     <div class="wrap">
-      <img src="studiopulse-logo.svg" alt="StudioPulse" style="height:22px;display:block" />
-      <span>© 2026 StudioPulse · El panel para estudios de grabación</span>
-      <a href="mailto:hola@studiopulse.app">hola@studiopulse.app</a>
+      <div class="footer-logo"><img src="icon.svg" alt="" /><span>Fold<i>Back</i></span></div>
+      <span>© 2026 FoldBack · El panel para estudios de grabación</span>
+      <a href="mailto:hola@foldback.com">hola@foldback.com</a>
     </div>
   </footer>
 
   <script>
     document.documentElement.classList.add('js');
+
+    // Slogan aleatorio del hero: uno de tres, elegido de nuevo en cada carga
+    const slogans = [
+      { lead: 'Escala tu estudio', accent: 'sin escalar el caos.' },
+      { lead: 'Menos gestión,', accent: 'más sesión.' },
+      { lead: 'El estudio,', accent: 'de vuelta en tus manos.' },
+    ];
+    const heroTitle = document.getElementById('hero-title');
+    if (heroTitle) {
+      const pick = slogans[Math.floor(Math.random() * slogans.length)];
+      heroTitle.textContent = '';
+      heroTitle.append(pick.lead + ' ');
+      const accentEl = document.createElement('i');
+      accentEl.textContent = pick.accent;
+      heroTitle.append(accentEl);
+    }
 
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
