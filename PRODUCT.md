@@ -37,13 +37,14 @@ Studio owner works from browser (desktop or mobile), no install required, logs i
 ## Brand Commitments
 
 - Name: FoldBack (renamed from StudioPulse; do not reuse the old name in new copy).
-- Logo: `icon.svg` (waveform mark, used as favicon and as the icon half of the live nav/hero wordmark lockup) + a live HTML "Fold<span>Back</span>" text lockup (white + accent-2 blue), not a flattened image — this lets the nav logo and the animated hero logo stay pixel-identical and easy to re-theme. The old flattened `studiopulse-logo.svg` / `studiopulse-logo-dark.svg` / `blacklab-logo-trans.png` files are legacy and unused in `index.html`.
+- Logo: `icon.svg` (waveform mark, used as favicon and as the icon half of the live nav/hero wordmark lockup) + a live HTML "Fold<span>Back</span>" text lockup (white + accent-2 blue), not a flattened image — this lets the nav logo and the animated hero logo stay pixel-identical and easy to re-theme. The old flattened StudioPulse/Blacklab logo files were deleted.
 - Contact email: hola@foldback.com.
+- Production domain: https://foldback.io (landing, Vercel project `foldback-landing`); GitHub repo `2cmdsth4ds-star/foldback-landing`.
 - Existing dark theme with blue accent (`--accent:#3987e5`) is the current committed visual direction; treat as incumbent system rather than open ground unless the user asks for a redesign.
 
 ## Evidence on Hand
 
-- Live embedded product demo (`blacklab-demo.vercel.app`) — real, treated as reliable evidence per user confirmation.
+- Live embedded product demo (`foldback-demo.vercel.app`) — real, treated as reliable evidence per user confirmation.
 - No testimonials, case studies, customer logos, or press mentions exist yet — do not fabricate any.
 - Pricing shown ($350 MXN/mo, $3,500 MXN/yr) is explicitly a temporary launch promotion for early studios, not final pricing — copy should keep signaling "promo"/"lanzamiento" framing rather than presenting it as permanent.
 
