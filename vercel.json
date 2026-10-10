@@ -1,6 +1,7 @@
 {
   "redirects": [
     { "source": "/demo", "destination": "https://demo.foldback.io", "permanent": false },
+    { "source": "/demo/", "destination": "https://demo.foldback.io", "permanent": false },
     { "source": "/demo/:path*", "destination": "https://demo.foldback.io/:path*", "permanent": false }
   ]
 }
