@@ -24,7 +24,7 @@ FoldBack is a SaaS panel for recording studios that consolidates session/room sc
 
 ## Operating Context
 
-Studio owner works from browser (desktop or mobile), no install required, logs in with username/password. Key workflows the product supports: booking sessions/rooms and catching schedule overlaps, tracking monthly income/expense/profit, generating and exporting branded proposals to PDF, sending balance-due reminders via WhatsApp/email, and sharing mixes/masters via private link. The live demo at `foldback-demo.vercel.app` is embedded directly on the landing page (hero iframe + feature-card iframes) as real product evidence, not a mockup.
+Studio owner works from browser (desktop or mobile), no install required, logs in with username/password. Key workflows the product supports: booking sessions/rooms and catching schedule overlaps, tracking monthly income/expense/profit, generating and exporting branded proposals to PDF, sending balance-due reminders via WhatsApp/email, and sharing mixes/masters via private link. The live demo at `demo.foldback.io` is embedded directly on the landing page (hero iframe + feature-card iframes) as real product evidence, not a mockup.
 
 ## Capabilities and Constraints
 
@@ -44,7 +44,7 @@ Studio owner works from browser (desktop or mobile), no install required, logs i
 
 ## Evidence on Hand
 
-- Live embedded product demo (`foldback-demo.vercel.app`) — real, treated as reliable evidence per user confirmation.
+- Live embedded product demo (`demo.foldback.io`) — real, treated as reliable evidence per user confirmation.
 - No testimonials, case studies, customer logos, or press mentions exist yet — do not fabricate any.
 - Pricing shown ($350 MXN/mo, $3,500 MXN/yr) is explicitly a temporary launch promotion for early studios, not final pricing — copy should keep signaling "promo"/"lanzamiento" framing rather than presenting it as permanent.
 
