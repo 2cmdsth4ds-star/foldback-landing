@@ -38,7 +38,7 @@ Studio owner works from browser (desktop or mobile), no install required, logs i
 
 - Name: FoldBack (renamed from StudioPulse; do not reuse the old name in new copy).
 - Logo: `icon.svg` (waveform mark, used as favicon and as the icon half of the live nav/hero wordmark lockup) + a live HTML "Fold<span>Back</span>" text lockup (white + accent-2 blue), not a flattened image — this lets the nav logo and the animated hero logo stay pixel-identical and easy to re-theme. The old flattened StudioPulse/Blacklab logo files were deleted.
-- Contact email: hola@foldback.com.
+- Contact email: hola@foldback.io.
 - Production domain: https://foldback.io (landing, Vercel project `foldback-landing`); GitHub repo `2cmdsth4ds-star/foldback-landing`.
 - Existing dark theme with blue accent (`--accent:#3987e5`) is the current committed visual direction; treat as incumbent system rather than open ground unless the user asks for a redesign.
 
