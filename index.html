@@ -51,7 +51,8 @@
     color:#fff;backdrop-filter:blur(8px);transition:transform 160ms var(--ease-out),background-color 160ms ease}
   .nav-cta:hover{background:rgba(255,255,255,.14);transform:translateY(-1px)}
   .nav-cta:active{transform:scale(.97)}
-  @media(max-width:760px){.nav-links a:not(.nav-cta){display:none}}
+  .nav-links .nav-login{color:var(--ink);font-weight:600}
+  @media(max-width:760px){.nav-links a:not(.nav-cta):not(.nav-login){display:none}.nav-links{gap:16px}}
 
   /* Logo grande (ícono + wordmark) que se encoge y se desliza hasta el logo del nav al hacer scroll */
   .logo-morph{display:none;position:fixed;top:160px;left:0;align-items:center;gap:14px;
@@ -308,6 +309,7 @@
   /* Footer */
   footer{border-top:1px solid var(--line);padding:40px 0;color:var(--muted);font-size:13.5px}
   footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+  .footer-links a:hover{color:var(--ink)}
   .footer-logo{display:flex;align-items:center;gap:7px;opacity:.9}
   .footer-logo img{height:22px;display:block}
   .footer-logo span{font-family:var(--sans);font-weight:700;font-size:14.5px;letter-spacing:-.02em;color:var(--ink-2)}
@@ -355,6 +357,7 @@
         <a href="#funciones">Funciones</a>
         <a href="#precios">Precios</a>
         <a href="#faq">Preguntas</a>
+        <a class="nav-login" href="https://app.foldback.io/login">Iniciar sesión</a>
         <a class="nav-cta" href="https://demo.foldback.io" target="_blank" rel="noopener">Ver demo</a>
       </div>
     </div>
@@ -662,7 +665,7 @@
     <div class="wrap">
       <div class="footer-logo"><img src="icon.svg" alt="" /><span>Fold<i>Back</i></span></div>
       <span>© 2026 FoldBack · El panel para estudios de grabación</span>
-      <a href="mailto:hola@foldback.io">hola@foldback.io</a>
+      <span class="footer-links"><a href="https://app.foldback.io/login">Iniciar sesión</a> · <a href="mailto:hola@foldback.io">hola@foldback.io</a></span>
     </div>
   </footer>
 
