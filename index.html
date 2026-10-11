@@ -51,8 +51,13 @@
     color:#fff;backdrop-filter:blur(8px);transition:transform 160ms var(--ease-out),background-color 160ms ease}
   .nav-cta:hover{background:rgba(255,255,255,.14);transform:translateY(-1px)}
   .nav-cta:active{transform:scale(.97)}
-  .nav-links .nav-login{color:var(--ink);font-weight:600}
-  @media(max-width:760px){.nav-links a:not(.nav-cta):not(.nav-login){display:none}.nav-links{gap:16px}}
+  .nav .wrap{position:relative}
+  .nav-login{display:inline-flex;align-items:center;font-size:13.5px;font-weight:600;padding:11px 18px;border-radius:10px;
+    background:#2470cc;color:#fff;transition:transform 160ms var(--ease-out),background-color 160ms ease}
+  .nav-login:hover{background:#1f63b8;transform:translateY(-1px)}
+  .nav-login:active{transform:scale(.97)}
+  @media(min-width:900px){.nav-login{position:absolute;left:0;right:0;margin:0 auto;width:fit-content}}
+  @media(max-width:760px){.nav-links a:not(.nav-cta){display:none}.nav-links{gap:16px}.nav-login{padding:10px 14px}}
 
   /* Logo grande (ícono + wordmark) que se encoge y se desliza hasta el logo del nav al hacer scroll */
   .logo-morph{display:none;position:fixed;top:160px;left:0;align-items:center;gap:14px;
@@ -331,7 +336,7 @@
     html{scroll-behavior:auto}
     html.js .reveal{opacity:1;transform:none;transition:none}
     html.js .bento .card{opacity:1;transform:none;transition:none}
-    .btn-primary:hover,.nav-cta:hover,.btn:active,.nav-cta:active,.card:hover,.plan:hover,
+    .btn-primary:hover,.nav-cta:hover,.nav-login:hover,.nav-login:active,.btn:active,.nav-cta:active,.card:hover,.plan:hover,
     .float-frame:hover,.float-frame:active,.peek-frame:hover,.peek-frame:active,
     .tour-dot:active::before,.tour-dot.is-active::before{transform:none}
     html.js .logo-morph{display:none}
@@ -353,11 +358,11 @@
         <img src="icon.svg" alt="" class="nav-logo-icon" />
         <span class="nav-logo-text">Fold<i>Back</i></span>
       </a>
+      <a class="nav-login" href="https://app.foldback.io/login">Iniciar sesión</a>
       <div class="nav-links">
         <a href="#funciones">Funciones</a>
         <a href="#precios">Precios</a>
         <a href="#faq">Preguntas</a>
-        <a class="nav-login" href="https://app.foldback.io/login">Iniciar sesión</a>
         <a class="nav-cta" href="https://demo.foldback.io" target="_blank" rel="noopener">Ver demo</a>
       </div>
     </div>
