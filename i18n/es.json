@@ -81,14 +81,12 @@
   "price.h2": "Precios de lanzamiento.",
   "price.p": "Un panel completo por menos de lo que cobras una sesión. Precio especial para los primeros estudios; sin permanencia, cancelas cuando quieras.",
   "price.m.tag": "Mensual · promo",
-  "price.m.unit": "MXN / mes",
   "price.m.desc": "Precio de lanzamiento para arrancar sin compromiso.",
   "price.m.l1": "Todas las funciones",
   "price.m.l2": "En la nube, respaldos incluidos",
   "price.m.l3": "Soporte por WhatsApp",
   "price.cta": "Suscribirme",
   "price.y.tag": "Anual · promo, 2 meses gratis",
-  "price.y.unit": "MXN / año",
   "price.y.desc": "Precio de lanzamiento con el mejor descuento.",
   "price.y.l1": "Todo lo del plan mensual",
   "price.y.l2": "Configuración inicial con tu marca",
@@ -123,5 +121,7 @@
       "lead": "El estudio,",
       "accent": "de vuelta en tus manos."
     }
-  ]
+  ],
+  "price.unit.m": "{cur} / mes",
+  "price.unit.y": "{cur} / año"
 }

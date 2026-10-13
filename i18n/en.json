@@ -81,14 +81,12 @@
   "price.h2": "Launch pricing.",
   "price.p": "A complete panel for less than what you charge for one session. Special price for the first studios; no lock-in, cancel any time.",
   "price.m.tag": "Monthly · promo",
-  "price.m.unit": "MXN / month",
   "price.m.desc": "Launch price to get started with no commitment.",
   "price.m.l1": "All features",
   "price.m.l2": "In the cloud, backups included",
   "price.m.l3": "WhatsApp support",
   "price.cta": "Subscribe",
   "price.y.tag": "Annual · promo, 2 months free",
-  "price.y.unit": "MXN / year",
   "price.y.desc": "Launch price with the best discount.",
   "price.y.l1": "Everything in the monthly plan",
   "price.y.l2": "Initial setup with your branding",
@@ -123,5 +121,7 @@
       "lead": "Your studio,",
       "accent": "back in your hands."
     }
-  ]
+  ],
+  "price.unit.m": "{cur} / month",
+  "price.unit.y": "{cur} / year"
 }

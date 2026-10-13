@@ -70,6 +70,8 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
   @media(max-width:760px){.nav-links a:not(.nav-cta){display:none}.nav-links{gap:16px}.nav-login{padding:10px 14px}}
 
   html.i18n-pending body{visibility:hidden}
+  html.js .plan .price{opacity:0}
+  html.js.prices-ready .plan .price{opacity:1;transition:opacity 200ms ease}
 
   /* Selector de idioma */
   .lang{position:relative}
@@ -648,7 +650,7 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
       <div class="plans reveal">
         <div class="plan">
           <div class="tag" data-i18n="price.m.tag">Mensual · promo</div>
-          <div class="price">$350 <small data-i18n="price.m.unit">MXN / mes</small></div>
+          <div class="price"><span data-price="m">$350</span> <small data-price-unit="m">MXN / mes</small></div>
           <div class="desc" data-i18n="price.m.desc">Precio de lanzamiento para arrancar sin compromiso.</div>
           <ul>
             <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="price.m.l1">Todas las funciones</span></li>
@@ -659,7 +661,7 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
         </div>
         <div class="plan feat">
           <div class="tag" style="color:var(--accent-2)" data-i18n="price.y.tag">Anual · promo, 2 meses gratis</div>
-          <div class="price">$3,500 <small data-i18n="price.y.unit">MXN / año</small></div>
+          <div class="price"><span data-price="y">$3,500</span> <small data-price-unit="y">MXN / año</small></div>
           <div class="desc" data-i18n="price.y.desc">Precio de lanzamiento con el mejor descuento.</div>
           <ul>
             <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="price.y.l1">Todo lo del plan mensual</span></li>
@@ -753,8 +755,54 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
       const od = document.querySelector('meta[property="og:description"]'); if (od) od.content = t('meta.ogdesc');
       renderSlogan();
       renderDotLabels();
+      renderPrices();
       document.querySelectorAll('.lang-code').forEach(c => { c.textContent = currentLang.toUpperCase(); });
       document.querySelectorAll('.lang-menu button').forEach(b => b.setAttribute('aria-selected', String(b.dataset.code === currentLang)));
+    }
+
+    // ---- Precios por moneda ----
+    // Precios fijos por moneda (no se convierten en vivo). Formato: [mensual, anual]. Deben coincidir con lo que se cobre.
+    const PRICES = {
+      MXN: [350, 3500], USD: [19, 190], EUR: [19, 190], GBP: [16, 160], CAD: [25, 250],
+      AUD: [29, 290], BRL: [99, 990], COP: [79000, 790000], CLP: [17000, 170000], PEN: [69, 690],
+    };
+    const EURO = 'AT BE BG HR CY EE FI FR DE GR IE IT LV LT LU MT NL PT SK SI ES'.split(' ');
+    const COUNTRY_CUR = { MX: 'MXN', US: 'USD', CA: 'CAD', GB: 'GBP', AU: 'AUD', BR: 'BRL', CO: 'COP', CL: 'CLP', PE: 'PEN' };
+    function currencyFor(country) {
+      if (!country) return 'USD';
+      const c = country.toUpperCase();
+      if (EURO.includes(c)) return 'EUR';
+      return COUNTRY_CUR[c] || 'USD';
+    }
+    function localeCountry() {
+      const q = new URLSearchParams(location.search).get('cc');
+      if (q && /^[A-Za-z]{2}$/.test(q)) return q.toUpperCase();
+      for (const l of (navigator.languages || [navigator.language])) {
+        try { const r = new Intl.Locale(l).region; if (r && /^[A-Z]{2}$/.test(r)) return r; } catch (e) {}
+      }
+      return null;
+    }
+    let priceCountry = localeCountry();
+    function renderPrices() {
+      const cur = currencyFor(priceCountry);
+      const amounts = PRICES[cur];
+      const loc = currentLang === 'es' ? 'es-MX' : currentLang === 'en' ? 'en-US' : currentLang;
+      const fmt = n => cur === 'PEN'
+        ? 'S/' + new Intl.NumberFormat(loc, { maximumFractionDigits: 0 }).format(n)
+        : new Intl.NumberFormat(loc, { style: 'currency', currency: cur, currencyDisplay: 'narrowSymbol', maximumFractionDigits: 0 }).format(n);
+      document.querySelectorAll('[data-price]').forEach(el => { el.textContent = fmt(amounts[el.dataset.price === 'y' ? 1 : 0]); });
+      document.querySelectorAll('[data-price-unit]').forEach(el => { el.textContent = t('price.unit.' + el.dataset.priceUnit, { cur }); });
+    }
+    function markPricesReady() { document.documentElement.classList.add('prices-ready'); }
+    setTimeout(markPricesReady, 1500);
+    if (/^[A-Za-z]{2}$/.test(new URLSearchParams(location.search).get('cc') || '')) {
+      markPricesReady();
+    } else {
+      fetch('/api/geo', { cache: 'no-store' })
+        .then(r => (r.ok ? r.json() : null))
+        .then(j => { if (j && j.country) priceCountry = j.country; })
+        .catch(() => {})
+        .finally(() => { renderPrices(); markPricesReady(); });
     }
 
     async function setLang(code, persist) {

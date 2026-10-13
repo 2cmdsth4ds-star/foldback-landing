@@ -46,7 +46,7 @@ Studio owner works from browser (desktop or mobile), no install required, logs i
 
 - Live embedded product demo (`demo.foldback.io`) — real, treated as reliable evidence per user confirmation.
 - No testimonials, case studies, customer logos, or press mentions exist yet — do not fabricate any.
-- Pricing shown ($350 MXN/mo, $3,500 MXN/yr) is explicitly a temporary launch promotion for early studios, not final pricing — copy should keep signaling "promo"/"lanzamiento" framing rather than presenting it as permanent.
+- Pricing shown (MXN 350/mo, MXN 3,500/yr for Mexico; fixed local-currency prices for other countries, USD by default — see NOTES.md) is explicitly a temporary launch promotion for early studios, not final pricing — copy should keep signaling "promo"/"lanzamiento" framing rather than presenting it as permanent.
 
 ## Product Principles
 
