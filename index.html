@@ -637,7 +637,7 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
         <p class="lead" data-i18n="show.lead">Arma la propuesta desde una plantilla o con ayuda de IA, ajusta los precios de tu catálogo y entrégala en un PDF con la imagen de tu estudio.</p>
         <ul>
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="show.l1">Plantillas por tipo de proyecto: single, EP, podcast, mezcla y master.</span></li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="show.l2">Total que se calcula solo y moneda en MXN, USD o EUR.</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="show.l2">Total que se calcula solo, en tu moneda o la que elijas.</span></li>
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="show.l3">Exporta a PDF y compártela por correo o WhatsApp.</span></li>
         </ul>
       </div>
@@ -647,10 +647,10 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
         <div style="font-size:13px;letter-spacing:1px;color:#c7c9cf" data-i18n="doc.sub">Single "Neón" · grabación, mezcla y master</div>
         <div class="rule"></div>
         <table>
-          <tr><td data-i18n="doc.r1">Grabación + producción</td><td class="r">$8,000</td></tr>
-          <tr><td data-i18n="doc.r2">Mezcla</td><td class="r">$4,500</td></tr>
-          <tr><td data-i18n="doc.r3">Mastering</td><td class="r">$1,500</td></tr>
-          <tr class="tot"><td data-i18n="doc.tot">Total</td><td class="r">$14,000 MXN</td></tr>
+          <tr><td data-i18n="doc.r1">Grabación + producción</td><td class="r" data-mock="8000">$8,000</td></tr>
+          <tr><td data-i18n="doc.r2">Mezcla</td><td class="r" data-mock="4500">$4,500</td></tr>
+          <tr><td data-i18n="doc.r3">Mastering</td><td class="r" data-mock="1500">$1,500</td></tr>
+          <tr class="tot"><td data-i18n="doc.tot">Total</td><td class="r" data-mock-total>$14,000 MXN</td></tr>
         </table>
       </div>
     </div>
@@ -819,7 +819,24 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
         : new Intl.NumberFormat(loc, { style: 'currency', currency: cur, currencyDisplay: 'narrowSymbol', maximumFractionDigits: 0 }).format(n);
       document.querySelectorAll('[data-price]').forEach(el => { el.textContent = fmt(amounts[el.dataset.price === 'y' ? 1 : 0]); });
       document.querySelectorAll('[data-price-unit]').forEach(el => { el.textContent = t('price.unit.' + el.dataset.priceUnit, { cur }); });
+      renderMockProposal(cur, fmt);
       renderCurrencyMenu(cur, loc);
+    }
+    // El ejemplo de propuesta usa los montos base en MXN, escalados con la proporción de los precios de cada moneda y redondeados.
+    function niceAmount(v) {
+      const step = Math.max(Math.pow(10, Math.floor(Math.log10(v)) - 1), v < 100 ? 5 : 1);
+      return Math.round(v / step) * step;
+    }
+    function renderMockProposal(cur, fmt) {
+      const ratio = PRICES[cur][0] / PRICES.MXN[0];
+      let total = 0;
+      document.querySelectorAll('[data-mock]').forEach(el => {
+        const v = cur === 'MXN' ? Number(el.dataset.mock) : niceAmount(Number(el.dataset.mock) * ratio);
+        total += v;
+        el.textContent = fmt(v);
+      });
+      const tot = document.querySelector('[data-mock-total]');
+      if (tot) tot.textContent = fmt(total) + ' ' + cur;
     }
     function renderCurrencyMenu(cur, loc) {
       const code = document.getElementById('cur-code'); if (code) code.textContent = cur;

@@ -20,3 +20,4 @@
 - Para probar otra moneda: `https://foldback.io/?cc=BR` (código de país de 2 letras).
 - Para agregar una moneda: suma su línea en `PRICES` y el país en `COUNTRY_CUR` (o en `EURO` si usa euro).
 - Selector manual de moneda (sección de precios): la elección se guarda en `localStorage: fb-cur` y gana sobre la detección automática. `?cc=XX` en la URL tiene prioridad sobre ambas, solo para pruebas.
+- El ejemplo de propuesta (sección "Cotiza como un estudio grande") parte de montos base en MXN (8,000 / 4,500 / 1,500) y los escala con la proporción de `PRICES` de cada moneda, redondeados. MXN muestra los montos originales.
