@@ -123,5 +123,6 @@
     }
   ],
   "price.unit.m": "{cur} / mes",
-  "price.unit.y": "{cur} / año"
+  "price.unit.y": "{cur} / año",
+  "price.cur.label": "Moneda"
 }
