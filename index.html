@@ -1105,5 +1105,21 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
 
     setLang(currentLang, false);
   </script>
+  <script>
+    // Conteo de visitas propio de FoldBack: sin cookies, sin terceros y sin guardar la IP.
+    (function () {
+      var url = 'https://app.foldback.io/api/metricas';
+      function avisar(evento) {
+        try { navigator.sendBeacon(url, new Blob([JSON.stringify({ sitio: 'web', evento: evento, ruta: location.pathname, ref: document.referrer })], { type: 'text/plain' })); } catch (e) {}
+      }
+      avisar('vista');
+      document.addEventListener('click', function (ev) {
+        var a = ev.target.closest && ev.target.closest('a[href]');
+        if (!a) return;
+        if (a.href.indexOf('demo.foldback.io') > -1) avisar('clic_demo');
+        else if (a.href.indexOf('mailto:') === 0 || /wa\.me|whatsapp/i.test(a.href)) avisar('clic_contacto');
+      }, true);
+    })();
+  </script>
 </body>
 </html>
