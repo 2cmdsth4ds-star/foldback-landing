@@ -47,11 +47,11 @@ export default async function handler(request) {
   const origen = new URL(request.url).origin;
   let res;
   try {
-    res = await fetch(origen + "/index.html");
+    res = await fetch(origen + "/landing.html");
   } catch (e) {
-    return new Response("No se pudo cargar la página.", { status: 502 });
+    return Response.redirect(origen + "/landing.html", 302);
   }
-  if (!res.ok) return new Response("No se pudo cargar la página.", { status: 502 });
+  if (!res.ok) return Response.redirect(origen + "/landing.html", 302);
   const html = inyectar(await res.text(), precioPara(request.headers.get("x-vercel-ip-country")));
   return new Response(html, {
     status: 200,

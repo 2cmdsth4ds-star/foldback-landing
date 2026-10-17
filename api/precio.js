@@ -1,6 +1,6 @@
 // Precio de FoldBack para el país del visitante (según el edge de Vercel).
 // La página normalmente ya trae el precio escrito (api/home.js); esto queda como
-// respaldo si alguien abre /index.html directo.
+// respaldo si alguien abre /landing.html directo.
 import { precioPara } from "./_precios.js";
 
 export default function handler(req, res) {

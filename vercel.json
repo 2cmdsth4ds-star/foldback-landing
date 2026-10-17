@@ -1,10 +1,36 @@
 {
   "rewrites": [
-    { "source": "/", "destination": "/api/home" }
+    {
+      "source": "/",
+      "destination": "/api/home"
+    }
   ],
   "redirects": [
-    { "source": "/demo", "destination": "https://demo.foldback.io", "permanent": false },
-    { "source": "/demo/", "destination": "https://demo.foldback.io", "permanent": false },
-    { "source": "/demo/:path*", "destination": "https://demo.foldback.io/:path*", "permanent": false }
+    {
+      "source": "/demo",
+      "destination": "https://demo.foldback.io",
+      "permanent": false
+    },
+    {
+      "source": "/demo/",
+      "destination": "https://demo.foldback.io",
+      "permanent": false
+    },
+    {
+      "source": "/demo/:path*",
+      "destination": "https://demo.foldback.io/:path*",
+      "permanent": false
+    }
+  ],
+  "headers": [
+    {
+      "source": "/landing.html",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
+    }
   ]
 }

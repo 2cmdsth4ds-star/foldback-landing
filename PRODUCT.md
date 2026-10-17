@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-static HTML/CSS/JS (no framework, no build step) — existing codebase, single `index.html` plus a Vercel serverless function (`api/lead.js`). Confirmed to stay this way for now; see conversation record for rationale (single-page marketing site, no complex state or routing to justify React/Astro).
+static HTML/CSS/JS (no framework, no build step) — existing codebase, single `landing.html` (served at `/` through api/home.js) plus a Vercel serverless function (`api/lead.js`). Confirmed to stay this way for now; see conversation record for rationale (single-page marketing site, no complex state or routing to justify React/Astro).
 
 ## Users
 
