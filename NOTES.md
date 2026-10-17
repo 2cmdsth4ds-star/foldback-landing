@@ -14,10 +14,8 @@
 - Pendiente: las capturas y el demo siguen en español; los precios están en MXN.
 
 ## Precios por moneda
-- La moneda sale del país del visitante: `api/geo.js` lee el encabezado `x-vercel-ip-country` de Vercel. Si falla, se usa la región del idioma del navegador; si tampoco hay, USD.
-- Los precios son fijos por moneda (no se convierten en vivo) y viven en `PRICES` dentro de `index.html`: `[mensual, anual]`. Hoy: MXN 350/3,500 · USD 19/190 · EUR 19/190 · GBP 16/160 · CAD 25/250 · AUD 29/290 · BRL 99/990 · COP 79,000/790,000 · CLP 17,000/170,000 · PEN 69/690. Cualquier otro país ve USD.
-- Los precios de USD, EUR, GBP, CAD, AUD, BRL, COP, CLP y PEN son una propuesta: confírmalos. Lo que cobre el sistema de pagos debe coincidir con lo que muestra la página.
-- Para probar otra moneda: `https://foldback.io/?cc=BR` (código de país de 2 letras).
-- Para agregar una moneda: suma su línea en `PRICES` y el país en `COUNTRY_CUR` (o en `EURO` si usa euro).
-- Selector manual de moneda (sección de precios): la elección se guarda en `localStorage: fb-cur` y gana sobre la detección automática. `?cc=XX` en la URL tiene prioridad sobre ambas, solo para pruebas.
-- El ejemplo de propuesta (sección "Cotiza como un estudio grande") parte de montos base en MXN (8,000 / 4,500 / 1,500) y los escala con la proporción de `PRICES` de cada moneda, redondeados. MXN muestra los montos originales.
+- Los precios viven solo en el servidor: `api/precio.js` (`PRECIOS`, formato `[mensual, anual]`). La página pide `/api/precio` y recibe únicamente la moneda y el precio del país del visitante (header `x-vercel-ip-country` de Vercel), así que desde fuera no se ven los precios de otras monedas. No hay selector de moneda ni `?cc=`.
+- Hoy (precio de fundador, primeros 30 estudios, 2026-10-17): MXN 350/3,500 · USD 29/290 · EUR 29/290 · GBP 25/250 · CAD 39/390 · AUD 45/450 · BRL 99/990 · COP 79,000/790,000 · CLP 17,000/170,000 · PEN 69/690. Cualquier otro país ve USD. Precio normal previsto: MXN 499 / USD 39.
+- Lo que cobre el sistema de pagos debe coincidir. El candado real es al cobrar: cada moneda solo para tarjetas/facturación de su país.
+- El ejemplo de propuesta usa montos base en MXN (8,000 / 4,500 / 1,500) convertidos con un tipo de cambio aproximado (`CAMBIO`), no con la proporción de precios.
+- Para agregar una moneda: su línea en `PRECIOS`, en `CAMBIO` y el país en `MONEDA` (o en `EURO`).

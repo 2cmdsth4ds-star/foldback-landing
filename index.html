@@ -696,19 +696,13 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
     <div class="wrap">
       <div class="sec-head reveal">
         <h2 data-i18n="price.h2">Precios de lanzamiento.</h2>
-        <p data-i18n="price.p">Un panel completo por menos de lo que cobras una sesión. Precio especial para los primeros estudios; sin permanencia, cancelas cuando quieras.</p>
-        <div class="cur-pick">
-          <span id="cur-label" data-i18n="price.cur.label">Moneda</span>
-          <div class="cur">
-            <button class="cur-btn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="cur-label cur-code"><span id="cur-code">MXN</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
-            <div class="cur-menu" role="listbox" hidden></div>
-          </div>
-        </div>
+        <p data-i18n="price.p">Un panel completo por menos de lo que cobras una sesión. Precio de fundador para los primeros 30 estudios: se queda igual mientras sigas suscrito. Sin permanencia, cancelas cuando quieras.</p>
+</div>
       </div>
       <div class="plans reveal">
         <div class="plan">
-          <div class="tag" data-i18n="price.m.tag">Mensual · promo</div>
-          <div class="price"><span data-price="m">$350</span> <small data-price-unit="m">MXN / mes</small></div>
+          <div class="tag" data-i18n="price.m.tag">Mensual · fundador</div>
+          <div class="price"><span data-price="m">&nbsp;</span> <small data-price-unit="m"></small></div>
           <div class="desc" data-i18n="price.m.desc">Precio de lanzamiento para arrancar sin compromiso.</div>
           <ul>
             <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="price.m.l1">Todas las funciones</span></li>
@@ -718,8 +712,8 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
           <a class="btn btn-ghost" href="#suscribirse" data-i18n="price.cta">Suscribirme</a>
         </div>
         <div class="plan feat">
-          <div class="tag" style="color:var(--accent-2)" data-i18n="price.y.tag">Anual · promo, 2 meses gratis</div>
-          <div class="price"><span data-price="y">$3,500</span> <small data-price-unit="y">MXN / año</small></div>
+          <div class="tag" style="color:var(--accent-2)" data-i18n="price.y.tag">Anual · fundador, 2 meses gratis</div>
+          <div class="price"><span data-price="y">&nbsp;</span> <small data-price-unit="y"></small></div>
           <div class="desc" data-i18n="price.y.desc">Precio de lanzamiento con el mejor descuento.</div>
           <ul>
             <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="price.y.l1">Todo lo del plan mensual</span></li>
@@ -734,7 +728,7 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
         <h3 data-i18n="inc.h">Incluido en todos los planes</h3>
         <ul>
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="inc.i1">Salas, clientes y proyectos ilimitados</span></li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="inc.i2">2 GB de almacenamiento para tus entregas</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="inc.i2">20 GB de almacenamiento para tus entregas</span></li>
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="inc.i3">Respaldos diarios y exportación de tus datos</span></li>
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="inc.i4">Pago con tarjeta y recibo automático</span></li>
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="inc.i5">Soporte por WhatsApp y correo en horario laboral</span></li>
@@ -832,103 +826,31 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
       document.querySelectorAll('.lang-menu button').forEach(b => b.setAttribute('aria-selected', String(b.dataset.code === currentLang)));
     }
 
-    // ---- Precios por moneda ----
-    // Precios fijos por moneda (no se convierten en vivo). Formato: [mensual, anual]. Deben coincidir con lo que se cobre.
-    const PRICES = {
-      MXN: [350, 3500], USD: [19, 190], EUR: [19, 190], GBP: [16, 160], CAD: [25, 250],
-      AUD: [29, 290], BRL: [99, 990], COP: [79000, 790000], CLP: [17000, 170000], PEN: [69, 690],
-    };
-    const EURO = 'AT BE BG HR CY EE FI FR DE GR IE IT LV LT LU MT NL PT SK SI ES'.split(' ');
-    const COUNTRY_CUR = { MX: 'MXN', US: 'USD', CA: 'CAD', GB: 'GBP', AU: 'AUD', BR: 'BRL', CO: 'COP', CL: 'CLP', PE: 'PEN' };
-    function currencyFor(country) {
-      if (!country) return 'USD';
-      const c = country.toUpperCase();
-      if (EURO.includes(c)) return 'EUR';
-      return COUNTRY_CUR[c] || 'USD';
-    }
-    function localeCountry() {
-      const q = new URLSearchParams(location.search).get('cc');
-      if (q && /^[A-Za-z]{2}$/.test(q)) return q.toUpperCase();
-      for (const l of (navigator.languages || [navigator.language])) {
-        try { const r = new Intl.Locale(l).region; if (r && /^[A-Z]{2}$/.test(r)) return r; } catch (e) {}
-      }
-      return null;
-    }
-    const ccParam = /^[A-Za-z]{2}$/.test(new URLSearchParams(location.search).get('cc') || '');
-    let priceCountry = localeCountry();
-    let userCurrency = null;
-    try { const sv = localStorage.getItem('fb-cur'); if (sv && PRICES[sv] && !ccParam) userCurrency = sv; } catch (e) {}
-    const activeCurrency = () => userCurrency || currencyFor(priceCountry);
+    // ---- Precios ----
+    // El servidor (api/precio.js) decide la moneda por el país del visitante y
+    // manda solo ese precio; aquí únicamente se pinta.
+    let precio = null;
     function renderPrices() {
-      const cur = activeCurrency();
-      const amounts = PRICES[cur];
+      if (!precio) return;
+      const cur = precio.cur;
       const loc = currentLang === 'es' ? 'es-MX' : currentLang === 'en' ? 'en-US' : currentLang;
       const fmt = n => cur === 'PEN'
         ? 'S/' + new Intl.NumberFormat(loc, { maximumFractionDigits: 0 }).format(n)
         : new Intl.NumberFormat(loc, { style: 'currency', currency: cur, currencyDisplay: 'narrowSymbol', maximumFractionDigits: 0 }).format(n);
-      document.querySelectorAll('[data-price]').forEach(el => { el.textContent = fmt(amounts[el.dataset.price === 'y' ? 1 : 0]); });
+      document.querySelectorAll('[data-price]').forEach(el => { el.textContent = fmt(el.dataset.price === 'y' ? precio.y : precio.m); });
       document.querySelectorAll('[data-price-unit]').forEach(el => { el.textContent = t('price.unit.' + el.dataset.priceUnit, { cur }); });
-      renderMockProposal(cur, fmt);
-      renderCurrencyMenu(cur, loc);
-    }
-    // El ejemplo de propuesta usa los montos base en MXN, escalados con la proporción de los precios de cada moneda y redondeados.
-    function niceAmount(v) {
-      const step = Math.max(Math.pow(10, Math.floor(Math.log10(v)) - 1), v < 100 ? 5 : 1);
-      return Math.round(v / step) * step;
-    }
-    function renderMockProposal(cur, fmt) {
-      const ratio = PRICES[cur][0] / PRICES.MXN[0];
+      const celdas = document.querySelectorAll('[data-mock]');
       let total = 0;
-      document.querySelectorAll('[data-mock]').forEach(el => {
-        const v = cur === 'MXN' ? Number(el.dataset.mock) : niceAmount(Number(el.dataset.mock) * ratio);
-        total += v;
-        el.textContent = fmt(v);
-      });
+      celdas.forEach((el, i) => { const v = precio.ejemplo[i] ?? Number(el.dataset.mock); total += v; el.textContent = fmt(v); });
       const tot = document.querySelector('[data-mock-total]');
       if (tot) tot.textContent = fmt(total) + ' ' + cur;
     }
-    function renderCurrencyMenu(cur, loc) {
-      const code = document.getElementById('cur-code'); if (code) code.textContent = cur;
-      const menu = document.querySelector('.cur-menu'); if (!menu) return;
-      let names = null;
-      try { names = new Intl.DisplayNames(loc, { type: 'currency' }); } catch (e) {}
-      menu.textContent = '';
-      Object.keys(PRICES).forEach(c => {
-        const b = document.createElement('button');
-        b.type = 'button'; b.setAttribute('role', 'option'); b.dataset.cur = c;
-        b.textContent = c + (names ? ' · ' + names.of(c) : '');
-        b.setAttribute('aria-selected', String(c === cur));
-        b.addEventListener('click', () => {
-          userCurrency = c;
-          try { localStorage.setItem('fb-cur', c); } catch (e) {}
-          menu.hidden = true;
-          const btn = document.querySelector('.cur-btn'); btn.setAttribute('aria-expanded', 'false'); btn.focus();
-          renderPrices();
-        });
-        menu.appendChild(b);
-      });
-    }
-    (function () {
-      const btn = document.querySelector('.cur-btn'), menu = document.querySelector('.cur-menu');
-      if (!btn || !menu) return;
-      btn.addEventListener('click', () => {
-        const open = menu.hidden;
-        document.querySelectorAll('.lang-menu').forEach(m => { m.hidden = true; });
-        menu.hidden = !open;
-        btn.setAttribute('aria-expanded', String(open));
-      });
-    })();
     function markPricesReady() { document.documentElement.classList.add('prices-ready'); }
-    setTimeout(markPricesReady, 1500);
-    if (ccParam) {
-      markPricesReady();
-    } else {
-      fetch('/api/geo', { cache: 'no-store' })
-        .then(r => (r.ok ? r.json() : null))
-        .then(j => { if (j && j.country) priceCountry = j.country; })
-        .catch(() => {})
-        .finally(() => { renderPrices(); markPricesReady(); });
-    }
+    const pedirPrecio = () => fetch('/api/precio', { cache: 'no-store' }).then(r => (r.ok ? r.json() : Promise.reject()));
+    pedirPrecio().catch(() => pedirPrecio())
+      .then(j => { precio = j; renderPrices(); })
+      .catch(() => { document.querySelectorAll('[data-price]').forEach(el => { el.textContent = '—'; }); })
+      .finally(markPricesReady);
 
     async function setLang(code, persist) {
       try {
