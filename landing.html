@@ -376,6 +376,45 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
   .final p{color:var(--ink-2);font-size:19.5px;margin:14px auto 28px;max-width:34rem}
   .final .hero-cta{justify-content:center;margin-top:0}
 
+  /* ¿Te suena familiar? */
+  .pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .pain{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:18px}
+  .pain-q{font-size:20px;line-height:1.35;color:var(--ink);font-weight:500;letter-spacing:-.01em}
+  .pain-a{display:flex;gap:10px;font-size:17px;line-height:1.45;color:var(--ink-2);margin-top:auto;padding-top:18px;border-top:1px solid var(--line)}
+  .pain-a svg{flex:0 0 auto;color:var(--accent-2);margin-top:2px}
+  @media(max-width:980px){.pain-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:640px){.pain-grid{grid-template-columns:1fr}}
+
+  /* Así se vive una sesión */
+  .steps{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:s}
+  .step{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px}
+  .step-n{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:var(--accent-soft);
+    border:1px solid rgba(57,135,229,.22);color:var(--accent-2);font-weight:700;font-size:18px;margin-bottom:18px}
+  .step h3{font-size:19px;font-weight:700;letter-spacing:-.01em}
+  .step p{font-size:17px;line-height:1.5;color:var(--ink-2);margin-top:8px}
+  @media(max-width:1000px){.steps{grid-template-columns:1fr 1fr}}
+  @media(max-width:620px){.steps{grid-template-columns:1fr}}
+
+  /* Formulario final */
+  .final-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;text-align:left}
+  .final-copy p{margin-left:0;margin-right:0}
+  .final-copy .hero-cta{justify-content:flex-start}
+  .lead-form{display:grid;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px;text-align:left}
+  .field{display:flex;flex-direction:column;gap:6px}
+  .field label{font-size:15px;color:var(--ink-2);font-weight:600}
+  .field input,.field textarea,.field select{background:var(--surface-deep);border:1px solid var(--line);color:var(--ink);
+    border-radius:10px;padding:12px 14px;font-size:16px;font-family:inherit;width:100%}
+  .field input::placeholder,.field textarea::placeholder{color:var(--muted);opacity:1}
+  .field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+  .field textarea{resize:vertical}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+  .lead-form .btn{justify-content:center;margin-top:4px}
+  .lead-form .btn:disabled{opacity:.6;cursor:default;transform:none}
+  .lead-msg{font-size:16px;min-height:20px;line-height:1.4}
+  .lead-msg.ok{color:var(--good)} .lead-msg.err{color:#e66767}
+  .lead-note{font-size:14px;color:var(--muted)}
+  @media(max-width:900px){.final-grid{grid-template-columns:1fr;gap:36px;text-align:center}.final-copy .hero-cta{justify-content:center}.final-copy p{margin-left:auto;margin-right:auto}}
+
   /* Footer */
   footer{border-top:1px solid var(--line);padding:40px 0;color:var(--muted);font-size:16px}
   footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
@@ -472,6 +511,41 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
     </div>
   </section>
 
+  <section class="sec pain-sec">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2 data-i18n="pain.h2">¿Te suena familiar?</h2>
+        <p data-i18n="pain.p">Situaciones de todos los días en un estudio, y cómo las resuelve FoldBack.</p>
+      </div>
+      <div class="pain-grid reveal">
+        <div class="pain">
+          <p class="pain-q" data-i18n="pain.1q">Son las once de la noche y sigues contestando mensajes para agendar una sesión.</p>
+          <p class="pain-a"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="pain.1a">Calendario por sala: ves qué horarios están libres sin preguntarle a nadie.</span></p>
+        </div>
+        <div class="pain">
+          <p class="pain-q" data-i18n="pain.2q">Dos bandas llegaron a la misma sala a la misma hora.</p>
+          <p class="pain-a"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="pain.2a">Aviso de empalmes antes de confirmar la sesión.</span></p>
+        </div>
+        <div class="pain">
+          <p class="pain-q" data-i18n="pain.3q">Un cliente dice que ya pagó y no encuentras dónde lo anotaste.</p>
+          <p class="pain-a"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="pain.3a">Cada pago queda registrado en la sesión y en tus finanzas.</span></p>
+        </div>
+        <div class="pain">
+          <p class="pain-q" data-i18n="pain.4q">Armar una cotización te toma una tarde.</p>
+          <p class="pain-a"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="pain.4a">Propuesta desde una plantilla, con tu marca, lista en minutos.</span></p>
+        </div>
+        <div class="pain">
+          <p class="pain-q" data-i18n="pain.5q">Te preguntan cuál es la última versión de la mezcla y tienes cinco archivos distintos.</p>
+          <p class="pain-a"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="pain.5a">Entregas con enlace privado, comentarios sobre el audio y aprobación del cliente.</span></p>
+        </div>
+        <div class="pain">
+          <p class="pain-q" data-i18n="pain.6q">A fin de mes no sabes si ganaste o perdiste.</p>
+          <p class="pain-a"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="pain.6a">Ingresos, gastos y utilidad del mes, siempre actualizados.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="sec compare">
     <div class="wrap">
       <div class="sec-head reveal">
@@ -562,6 +636,37 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
           </ul>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="sec flow-sec">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2 data-i18n="flow.h2">Así se vive una sesión con FoldBack.</h2>
+        <p data-i18n="flow.p">De la reserva al último cobro, cada paso en el mismo lugar.</p>
+      </div>
+      <ol class="steps reveal">
+        <li class="step">
+          <span class="step-n" aria-hidden="true">1</span>
+          <h3 data-i18n="flow.1t">Antes de la sesión</h3>
+          <p data-i18n="flow.1p">Agendas la sesión, asignas sala e ingeniero y FoldBack te avisa si algo se empalma. Mandas la cotización con tu marca.</p>
+        </li>
+        <li class="step">
+          <span class="step-n" aria-hidden="true">2</span>
+          <h3 data-i18n="flow.2t">Durante la sesión</h3>
+          <p data-i18n="flow.2p">Ves en una línea de tiempo qué pasa hoy en cada sala y qué viene después. Con un clic le recuerdas al cliente por WhatsApp.</p>
+        </li>
+        <li class="step">
+          <span class="step-n" aria-hidden="true">3</span>
+          <h3 data-i18n="flow.3t">Después de la sesión</h3>
+          <p data-i18n="flow.3p">Entregas mezclas y masters con un enlace privado. El cliente comenta sobre el audio y aprueba la versión final.</p>
+        </li>
+        <li class="step">
+          <span class="step-n" aria-hidden="true">4</span>
+          <h3 data-i18n="flow.4t">Al cierre</h3>
+          <p data-i18n="flow.4p">Registras el pago o mandas el recordatorio de saldo. Al final del mes, ingresos, gastos y utilidad ya están listos.</p>
+        </li>
+      </ol>
     </div>
   </section>
 
@@ -709,7 +814,7 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
             <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="price.m.l2">En la nube, respaldos incluidos</span></li>
             <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="price.m.l3">Soporte por WhatsApp</span></li>
           </ul>
-          <a class="btn btn-ghost" href="#suscribirse" data-i18n="price.cta">Suscribirme</a>
+          <a class="btn btn-ghost" href="#suscribirse" data-plan="mensual" data-i18n="price.cta">Suscribirme</a>
         </div>
         <div class="plan feat">
           <div class="tag" style="color:var(--accent-2)" data-i18n="price.y.tag">Anual · fundador, 2 meses gratis</div>
@@ -720,7 +825,7 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
             <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="price.y.l2">Configuración inicial con tu marca</span></li>
             <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="price.y.l3">Prioridad en soporte</span></li>
           </ul>
-          <a class="btn btn-primary" href="#suscribirse" data-i18n="price.cta">Suscribirme</a>
+          <a class="btn btn-primary" href="#suscribirse" data-plan="anual" data-i18n="price.cta">Suscribirme</a>
         </div>
       </div>
 
@@ -753,15 +858,34 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
     </div>
   </section>
 
-  <!-- FINAL CTA -->
+  <!-- FINAL CTA + FORMULARIO -->
   <section class="final reveal" id="suscribirse">
-    <div class="wrap">
-      <h2 data-i18n="final.h2">Pon tu estudio en orden esta semana.</h2>
-      <p data-i18n="final.p">Explora el demo con datos de ejemplo y suscríbete cuando estés listo.</p>
-      <div class="hero-cta">
-        <a class="btn btn-primary" href="https://demo.foldback.io" target="_blank" rel="noopener" data-i18n="cta.demo">Ver el demo →</a>
-        <a class="btn btn-ghost" href="#precios" data-i18n="cta.subscribe">Suscribirse</a>
+    <div class="wrap final-grid">
+      <div class="final-copy">
+        <h2 data-i18n="final.h2">Pon tu estudio en orden esta semana.</h2>
+        <p data-i18n="final.p">Explora el demo con datos de ejemplo y, cuando estés listo, déjanos tus datos y activamos tu cuenta.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="https://demo.foldback.io" target="_blank" rel="noopener" data-i18n="cta.demo">Ver el demo →</a>
+        </div>
       </div>
+      <form class="lead-form" id="lead-form" novalidate>
+        <div class="field"><label for="lf-nombre" data-i18n="form.nombre">Nombre</label><input id="lf-nombre" name="nombre" autocomplete="name" placeholder="Tu nombre" data-i18n-placeholder="form.nombre.ph" /></div>
+        <div class="field"><label for="lf-estudio" data-i18n="form.estudio">Estudio</label><input id="lf-estudio" name="estudio" autocomplete="organization" placeholder="Nombre de tu estudio" data-i18n-placeholder="form.estudio.ph" /></div>
+        <div class="field"><label for="lf-contacto"><span data-i18n="form.contacto">WhatsApp o correo</span> <span aria-hidden="true">*</span></label><input id="lf-contacto" name="contacto" required autocomplete="email" placeholder="Para poder responderte" data-i18n-placeholder="form.contacto.ph" /></div>
+        <div class="field"><label for="lf-interes" data-i18n="form.interes">¿Qué te interesa?</label>
+          <select id="lf-interes" name="interes">
+            <option value="Quiero suscribirme" data-i18n="form.i1">Quiero suscribirme</option>
+            <option value="Quiero una demo guiada" data-i18n="form.i2">Quiero una demo guiada</option>
+            <option value="Tengo una pregunta" data-i18n="form.i3">Tengo una pregunta</option>
+            <option value="Tengo varios estudios o sedes" data-i18n="form.i4">Tengo varios estudios o sedes</option>
+          </select></div>
+        <div class="field"><label for="lf-mensaje" data-i18n="form.mensaje">Mensaje (opcional)</label><textarea id="lf-mensaje" name="mensaje" rows="3" placeholder="¿Algo que quieras contarnos?" data-i18n-placeholder="form.mensaje.ph"></textarea></div>
+        <input class="hp" type="text" name="web" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <input type="hidden" name="plan" value="" />
+        <button class="btn btn-primary" type="submit" id="lf-btn" data-i18n="form.enviar">Enviar</button>
+        <div class="lead-msg" id="lead-msg" role="status" aria-live="polite"></div>
+        <p class="lead-note" data-i18n="form.nota">Solo usaremos tus datos para responderte.</p>
+      </form>
     </div>
   </section>
   </main>
@@ -812,7 +936,7 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
       document.documentElement.lang = currentLang;
       document.querySelectorAll('[data-i18n]').forEach(el => { const v = dict[el.dataset.i18n]; if (typeof v === 'string') el.textContent = v; });
       document.querySelectorAll('[data-i18n-html]').forEach(el => { const v = dict[el.dataset.i18nHtml]; if (typeof v === 'string') el.innerHTML = v; });
-      ['alt', 'title', 'aria-label'].forEach(attr => {
+      ['alt', 'title', 'aria-label', 'placeholder'].forEach(attr => {
         document.querySelectorAll('[data-i18n-' + attr + ']').forEach(el => { const v = dict[el.getAttribute('data-i18n-' + attr)]; if (typeof v === 'string') el.setAttribute(attr, v); });
       });
       document.title = t('meta.title');
@@ -858,6 +982,42 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
         .catch(() => { document.querySelectorAll('[data-price]').forEach(el => { el.textContent = '—'; }); })
         .finally(markPricesReady);
     }
+
+    // ---- Formulario de contacto ----
+    (function () {
+      const form = document.getElementById('lead-form');
+      if (!form) return;
+      const msg = document.getElementById('lead-msg');
+      const btn = document.getElementById('lf-btn');
+      const cargada = Date.now();
+      document.querySelectorAll('[data-plan]').forEach(a => a.addEventListener('click', () => {
+        form.elements.plan.value = a.dataset.plan;
+        form.elements.interes.value = 'Quiero suscribirme';
+      }));
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const contacto = form.elements.contacto.value.trim();
+        if (!contacto) { msg.className = 'lead-msg err'; msg.textContent = t('form.vacio'); form.elements.contacto.focus(); return; }
+        btn.disabled = true; btn.textContent = t('form.enviando'); msg.className = 'lead-msg'; msg.textContent = '';
+        const datos = {
+          nombre: form.elements.nombre.value, estudio: form.elements.estudio.value, contacto,
+          interes: form.elements.interes.value, plan: form.elements.plan.value,
+          mensaje: form.elements.mensaje.value, web: form.elements.web.value, lang: currentLang,
+        };
+        try {
+          if (Date.now() - cargada < 2500) await new Promise(r => setTimeout(r, 2500));
+          const r = await fetch('/api/lead', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(datos) });
+          if (!r.ok) throw new Error('lead ' + r.status);
+          form.reset();
+          msg.className = 'lead-msg ok'; msg.textContent = t('form.ok');
+          btn.textContent = t('form.enviar'); btn.disabled = true;
+          setTimeout(() => { btn.disabled = false; }, 8000);
+        } catch (err) {
+          msg.className = 'lead-msg err'; msg.textContent = t('form.err');
+          btn.disabled = false; btn.textContent = t('form.enviar');
+        }
+      });
+    })();
 
     async function setLang(code, persist) {
       try {
