@@ -23,11 +23,8 @@
 - Para agregar una moneda: su línea en `PRECIOS` y `CAMBIO`, y el país en `MONEDA` (o en `EURO`), todo en `api/_precios.js`.
 - Para probar un país sin VPN: ejecutar `precioPara("DE")` de `api/_precios.js` o llamar al handler de `api/home.js` con un `Request` que traiga el header `x-vercel-ip-country`.
 
-## Formulario de contacto
-- Vive en la sección final (`#suscribirse`). Los botones "Suscribirme" de los planes lo llevan ahí y rellenan "plan" y "Quiero suscribirme". Envía a `/api/lead` (`api/lead.js`), que manda un correo a `hola@foldback.io` con Resend (remitente `no-reply@foldback.io`; `reply_to` es el correo del interesado si dejó uno).
-- **Necesita la variable `RESEND_API_KEY` en este proyecto de Vercel** (`vercel env add RESEND_API_KEY production`, y publicar de nuevo). Sin ella responde 503 y la página le pide al visitante que escriba a hola@foldback.io. Opcional: `LEAD_TO` para cambiar el destinatario.
-- Defensas básicas: campo trampa oculto (`web`), espera mínima de 2.5 s antes de enviar y límites de longitud. No guarda nada en base de datos.
-
 ## Secciones nuevas (2026-10-17)
 - "¿Te suena familiar?" (`pain.*`), antes de la comparación; "Así se vive una sesión con FoldBack" (`flow.*`), después de las funciones.
-- Pendiente: caso real de Blacklab (testimonio con cifras), video corto, publicar privacidad y términos.
+- Sin formulario de contacto (se quitó el 2026-10-17): "Suscribirse" lleva a precios hasta que exista el cobro. `api/lead.js` se eliminó.
+- La captura del iPhone (`demo-movil.jpg`) es la versión móvil real del demo (390×~1020 px, sin el aviso del demo).
+- Pendiente: caso real de Blacklab (testimonio con datos verdaderos), video corto, publicar privacidad y términos.
