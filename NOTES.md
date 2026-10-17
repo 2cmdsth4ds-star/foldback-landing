@@ -28,3 +28,4 @@
 - Sin formulario de contacto (se quitó el 2026-10-17): "Suscribirse" lleva a precios hasta que exista el cobro. `api/lead.js` se eliminó.
 - La captura del iPhone (`demo-movil.jpg`) es la versión móvil real del demo (390×~1020 px, sin el aviso del demo).
 - Pendiente: caso real de Blacklab (testimonio con datos verdaderos), video corto, publicar privacidad y términos.
+- Reservas en línea (2026-10-17): sección `#reservas` (capturas `demo-reservas.jpg` y `demo-reservar-movil.jpg`, tomadas del demo en `/reservas` y `/reservar/aurora-demo`), un punto nuevo en "Gestión del estudio", una pregunta frecuente y ajustes a "¿Te suena familiar?" y a "Así se vive una sesión". Solo se afirma lo que hace la app hoy: solicitud pendiente que el estudio confirma, correo al cliente y página embebible. El anticipo en línea con tarjeta NO está en la app; no se menciona.

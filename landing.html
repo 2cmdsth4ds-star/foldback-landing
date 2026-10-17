@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>FoldBack · El panel para tu estudio de grabación</title>
-<meta name="description" content="Sesiones, finanzas, propuestas y entregas de tu estudio de grabación en un solo panel. Prueba el demo." />
+<meta name="description" content="Sesiones, reservas en línea, finanzas, propuestas y entregas de tu estudio de grabación en un solo panel. Prueba el demo." />
 <meta property="og:title" content="FoldBack · El panel para tu estudio de grabación" />
 <meta property="og:description" content="Administra sesiones, finanzas, propuestas y entregas de tu estudio en un solo lugar." />
 <link rel="icon" href="/icon.svg" type="image/svg+xml" />
@@ -385,6 +385,20 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
   @media(max-width:980px){.pain-grid{grid-template-columns:1fr 1fr}}
   @media(max-width:640px){.pain-grid{grid-template-columns:1fr}}
 
+  /* Reservas en línea */
+  .res-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+  .res-copy h2{font-size:clamp(30px,3.8vw,42px);letter-spacing:-.02em;font-weight:700;line-height:1.1;text-wrap:balance}
+  .res-copy .lead{font-size:19px;color:var(--ink-2);margin-top:14px;line-height:1.6}
+  .res-copy ul{list-style:none;margin-top:24px;display:flex;flex-direction:column;gap:14px}
+  .res-copy li{display:flex;gap:12px;font-size:17.5px;line-height:1.45;color:var(--ink-2)}
+  .res-copy li svg{flex:0 0 auto;color:var(--accent-2);margin-top:2px}
+  .res-visual{position:relative;padding-bottom:7%}
+  .res-admin{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--surface);width:88%}
+  .res-admin img{display:block;width:100%;height:auto}
+  .res-phone{position:absolute;right:0;bottom:0;width:27%;filter:drop-shadow(0 22px 44px rgba(0,0,0,.55))}
+  .res-phone .shot{display:block;width:100%;height:auto;aspect-ratio:9/19;object-fit:cover;object-position:top;border-radius:26px}
+  @media(max-width:900px){.res-grid{grid-template-columns:1fr;gap:40px}.res-visual{padding-bottom:12%}.res-admin{width:90%}.res-phone{width:34%}}
+
   /* Así se vive una sesión */
   .steps{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:s}
   .step{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px}
@@ -500,7 +514,7 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
       <div class="pain-grid reveal">
         <div class="pain">
           <p class="pain-q" data-i18n="pain.1q">Son las once de la noche y sigues contestando mensajes para agendar una sesión.</p>
-          <p class="pain-a"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="pain.1a">Calendario por sala: ves qué horarios están libres sin preguntarle a nadie.</span></p>
+          <p class="pain-a"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="pain.1a">Tus clientes piden sesión desde tu página de reservas; tú solo confirmas.</span></p>
         </div>
         <div class="pain">
           <p class="pain-q" data-i18n="pain.2q">Dos bandas llegaron a la misma sala a la misma hora.</p>
@@ -570,6 +584,7 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
           <p data-i18n="grp.1.p">Todo lo que pasa en tus salas, en un solo calendario.</p>
           <ul class="card-list">
               <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="grp.1.i1">Agenda y calendario por sala</span></li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="grp.1.i6">Reservas en línea</span></li>
               <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="grp.1.i2">Sesiones con tarifas y anticipos</span></li>
               <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="grp.1.i3">Disponibilidad y empalmes</span></li>
               <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="grp.1.i4">Clientes y contactos</span></li>
@@ -619,6 +634,31 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
     </div>
   </section>
 
+  <!-- RESERVAS EN LÍNEA -->
+  <section class="sec res-sec" id="reservas">
+    <div class="wrap res-grid">
+      <div class="res-copy reveal">
+        <h2 data-i18n="res.h2">Tus clientes reservan solos.</h2>
+        <p class="lead" data-i18n="res.p">Cada estudio tiene su propia página de reservas. El cliente elige servicio, sala, día y hora libres; tú solo confirmas.</p>
+        <ul>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="res.i1">Solo se ofrecen horarios libres, dentro de tu horario y sin choques con otras sesiones.</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="res.i2">Cada solicitud aparta su lugar en el calendario como sesión pendiente.</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="res.i3">Confirmas o rechazas con un clic, y al cliente le llega un correo.</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="res.i4">Tú decides servicios, salas, duración y anticipación, y puedes poner la página en tu sitio web.</span></li>
+        </ul>
+      </div>
+      <div class="res-visual reveal">
+        <div class="res-admin"><img src="demo-reservas.jpg" width="1400" height="1083" alt="Página de reservas en línea de FoldBack con el enlace del estudio y las solicitudes por atender, con botones para confirmar, rechazar o escribir por WhatsApp" data-i18n-alt="res.alt1" loading="lazy" /></div>
+        <div class="res-phone" aria-hidden="false">
+          <div class="iphone-frame">
+            <div class="iphone-island"></div>
+            <img class="shot" src="demo-reservar-movil.jpg" width="780" height="1688" alt="Página de reservas del estudio en un celular: el cliente elige servicio, sala, duración e ingeniero" data-i18n-alt="res.alt2" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="sec flow-sec">
     <div class="wrap">
       <div class="sec-head reveal">
@@ -629,7 +669,7 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
         <li class="step">
           <span class="step-n" aria-hidden="true">1</span>
           <h3 data-i18n="flow.1t">Antes de la sesión</h3>
-          <p data-i18n="flow.1p">Agendas la sesión, asignas sala e ingeniero y FoldBack te avisa si algo se empalma. Mandas la cotización con tu marca.</p>
+          <p data-i18n="flow.1p">Tus clientes reservan desde tu página, o tú agendas la sesión y asignas sala e ingeniero, y FoldBack te avisa si algo se empalma. Mandas la cotización con tu marca.</p>
         </li>
         <li class="step">
           <span class="step-n" aria-hidden="true">2</span>
@@ -833,6 +873,7 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
         <details><summary data-i18n="faq.q3">¿Puedo ponerle mi logo y mis precios?</summary><p data-i18n="faq.a3">Claro. Configuras el nombre, el logo y tu catálogo de servicios; las propuestas y recibos salen con la imagen de tu estudio.</p></details>
         <details><summary data-i18n="faq.q5">¿Puedo cancelar cuando quiera?</summary><p data-i18n="faq.a5">Sí. No hay permanencia: cancelas cuando quieras y conservas el acceso hasta el final del periodo pagado. Antes de irte puedes exportar todos tus datos.</p></details>
         <details><summary data-i18n="faq.q6">¿Cómo pago y cómo recibo mi comprobante?</summary><p data-i18n="faq.a6">Con tarjeta. Cada pago genera un recibo automático que te llega por correo.</p></details>
+        <details><summary data-i18n="faq.q7">¿Mis clientes pueden reservar solos?</summary><p data-i18n="faq.a7">Sí. Cada estudio tiene una página de reservas con su propio enlace: el cliente elige servicio, sala, día y hora libres y deja sus datos. La solicitud aparta el horario en tu calendario como sesión pendiente y tú la confirmas o rechazas con un clic; al cliente le llega un correo.</p></details>
         <details><summary data-i18n="faq.q4">¿Cómo empiezo?</summary><p data-i18n="faq.a4">Prueba el demo para conocerlo y suscríbete para activar tu cuenta. Te ayudamos con la configuración inicial y a cargar tus primeros datos.</p></details>
       </div>
     </div>
