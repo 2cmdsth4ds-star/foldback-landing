@@ -847,10 +847,17 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
     }
     function markPricesReady() { document.documentElement.classList.add('prices-ready'); }
     const pedirPrecio = () => fetch('/api/precio', { cache: 'no-store' }).then(r => (r.ok ? r.json() : Promise.reject()));
-    pedirPrecio().catch(() => pedirPrecio())
-      .then(j => { precio = j; renderPrices(); })
-      .catch(() => { document.querySelectorAll('[data-price]').forEach(el => { el.textContent = '—'; }); })
-      .finally(markPricesReady);
+    if (window.__PRECIO) {
+      // El servidor ya escribió el precio del país en el HTML (api/home.js).
+      precio = window.__PRECIO;
+      markPricesReady();
+    } else {
+      // Respaldo si la página se abrió directo desde /index.html.
+      pedirPrecio().catch(() => pedirPrecio())
+        .then(j => { precio = j; renderPrices(); })
+        .catch(() => { document.querySelectorAll('[data-price]').forEach(el => { el.textContent = '—'; }); })
+        .finally(markPricesReady);
+    }
 
     async function setLang(code, persist) {
       try {
