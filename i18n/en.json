@@ -192,5 +192,7 @@
   "res.alt2": "The studio’s booking page on a phone: the client picks the service, room, duration and engineer",
   "grp.1.i6": "Online booking",
   "faq.q7": "Can my clients book on their own?",
-  "faq.a7": "Yes. Every studio gets a booking page with its own link: the client picks a service, room, day and an open time slot, and leaves their details. The request holds the slot on your calendar as a pending session, and you confirm or decline it with one click; the client gets an email."
+  "faq.a7": "Yes. Every studio gets a booking page with its own link: the client picks a service, room, day and an open time slot, and leaves their details. The request holds the slot on your calendar as a pending session, and you confirm or decline it with one click; the client gets an email.",
+  "foot.privacy": "Privacy notice",
+  "foot.terms": "Terms"
 }

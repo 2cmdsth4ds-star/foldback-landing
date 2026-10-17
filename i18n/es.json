@@ -192,5 +192,7 @@
   "res.alt2": "Página de reservas del estudio en un celular: el cliente elige servicio, sala, duración e ingeniero",
   "grp.1.i6": "Reservas en línea",
   "faq.q7": "¿Mis clientes pueden reservar solos?",
-  "faq.a7": "Sí. Cada estudio tiene una página de reservas con su propio enlace: el cliente elige servicio, sala, día y hora libres y deja sus datos. La solicitud aparta el horario en tu calendario como sesión pendiente y tú la confirmas o rechazas con un clic; al cliente le llega un correo."
+  "faq.a7": "Sí. Cada estudio tiene una página de reservas con su propio enlace: el cliente elige servicio, sala, día y hora libres y deja sus datos. La solicitud aparta el horario en tu calendario como sesión pendiente y tú la confirmas o rechazas con un clic; al cliente le llega un correo.",
+  "foot.privacy": "Aviso de privacidad",
+  "foot.terms": "Términos"
 }
