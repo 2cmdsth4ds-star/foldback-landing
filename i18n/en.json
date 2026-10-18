@@ -193,6 +193,8 @@
   "grp.1.i6": "Online booking",
   "faq.q7": "Can my clients book on their own?",
   "faq.a7": "Yes. Every studio gets a booking page with its own link: the client picks a service, room, day and an open time slot, and leaves their details. The request holds the slot on your calendar as a pending session, and you confirm or decline it with one click; the client gets an email.",
+  "faq.q8": "What happens to the price once the founder spots run out?",
+  "faq.a8": "The first 30 studios keep their founder price for as long as they stay subscribed, no matter how much it rises later. Once those spots are filled, new studios will pay the regular price, which will be higher.",
   "foot.privacy": "Privacy notice",
   "foot.terms": "Terms"
 }
