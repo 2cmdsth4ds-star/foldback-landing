@@ -40,8 +40,6 @@
   "dev.iphone": "FoldBack session list in its mobile version, open on an iPhone 17 Pro Max",
   "peek.h2": "This is what FoldBack looks like inside.",
   "peek.p": "Every screenshot below comes from the real demo, with no retouching and no mockups.",
-  "peek.alt": "FoldBack overview: today’s sessions on a timeline by room, pending notices and quick actions to add clients, projects and payments",
-  "peek.cap": "Today’s sessions by room, the notices that need your attention and shortcuts to book, charge and create projects, all on the same screen when you log in.",
   "tour.label": "FoldBack feature gallery, swipe or use the arrows",
   "tour.a1": "FoldBack session list with date, time, project, client, type, room, total, balance and status, plus buttons to charge, edit and quote",
   "tour.a2": "FoldBack weekly calendar view with each day’s sessions and tasks, with their room and client",

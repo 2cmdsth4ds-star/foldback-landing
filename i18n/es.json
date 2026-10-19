@@ -40,8 +40,6 @@
   "dev.iphone": "Lista de sesiones de FoldBack en su versión móvil, abierta en un iPhone 17 Pro Max",
   "peek.h2": "Así se ve FoldBack por dentro.",
   "peek.p": "Todas las capturas de aquí abajo son del demo real, sin retoques ni maquetas.",
-  "peek.alt": "Resumen de FoldBack: las sesiones de hoy en una línea de tiempo por sala, avisos pendientes y accesos rápidos para crear clientes, proyectos y cobros",
-  "peek.cap": "Tus sesiones de hoy por sala, los avisos que necesitan atención y accesos directos para agendar, cobrar y crear proyectos, todo en la misma pantalla al entrar.",
   "tour.label": "Galería de funciones de FoldBack, desliza o usa las flechas",
   "tour.a1": "Lista de sesiones en FoldBack con fecha, horario, proyecto, cliente, tipo, sala, total, saldo y estado, y botones para cobrar, editar y cotizar",
   "tour.a2": "Vista semanal del calendario de FoldBack con las sesiones y tareas de cada día, con su sala y cliente",

@@ -273,18 +273,6 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
 
   /* Vistazo real al panel */
   .peek{padding:20px 0 100px}
-  .peek-frame{position:relative;max-width:980px;margin:0 auto;border:1px solid var(--line);
-    border-radius:16px;overflow:hidden;background:var(--surface);display:block;
-    transition:transform 200ms var(--ease-out),border-color 200ms ease}
-  .peek-frame:hover{border-color:var(--line-hover);transform:translateY(-3px)}
-  .peek-frame:active{transform:scale(.99)}
-  .peek-bar{display:flex;align-items:center;gap:8px;padding:11px 14px;border-bottom:1px solid var(--line);background:var(--surface-deep)}
-  .peek-bar i{width:11px;height:11px;border-radius:999px;background:#2f2f34;display:inline-block}
-  .peek-bar span{margin-left:10px;font-family:var(--mono);font-size:12.5px;color:var(--muted);
-    background:var(--surface-deep);border:1px solid var(--line);border-radius:7px;padding:4px 10px}
-  .peek-frame img{display:block;width:100%;height:auto}
-  .peek-caption{max-width:640px;margin:28px auto 0;text-align:center}
-  .peek-caption p{font-size:18px;color:var(--ink-2);line-height:1.6}
 
   /* Galería: carrusel horizontal con scroll-snap nativo */
   .tour-wrap{margin-top:56px;position:relative}
@@ -458,7 +446,7 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
     html.js .reveal{opacity:1;transform:none;transition:none}
     html.js .bento .card{opacity:1;transform:none;transition:none}
     .btn-primary:hover,.nav-cta:hover,.nav-login:hover,.nav-login:active,.btn:active,.nav-cta:active,.card:hover,.plan:hover,
-    .float-frame:hover,.float-frame:active,.peek-frame:hover,.peek-frame:active,
+    .float-frame:hover,.float-frame:active,
     .tour-dot:active::before,.tour-dot.is-active::before{transform:none}
     html.js .logo-morph{display:none}
     html.js .nav-logo-icon,html.js .nav-logo-text{opacity:1;transition:none}
@@ -726,18 +714,10 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
   <!-- VISTAZO REAL AL PANEL -->
   <section class="peek reveal" id="vistazo">
     <div class="wrap">
-      <div class="sec-head center" style="margin-bottom:32px">
+      <div class="sec-head center" style="margin-bottom:0">
         <h2 data-i18n="peek.h2">Así se ve FoldBack por dentro.</h2>
         <p data-i18n="peek.p">Todas las capturas de aquí abajo son del demo real, sin retoques ni maquetas.</p>
       </div>
-      <a class="peek-frame" href="https://demo.foldback.io/estudio" target="_blank" rel="noopener">
-        <div class="peek-bar"><i></i><i></i><i></i><span>demo.foldback.io/estudio</span></div>
-        <img src="dashboard-resumen.webp" alt="Resumen de FoldBack: las sesiones de hoy en una línea de tiempo por sala, avisos pendientes y accesos rápidos para crear clientes, proyectos y cobros" data-i18n-alt="peek.alt" width="2800" height="1800" loading="lazy" />
-      </a>
-      <div class="peek-caption">
-        <p data-i18n="peek.cap">Tus sesiones de hoy por sala, los avisos que necesitan atención y accesos directos para agendar, cobrar y crear proyectos, todo en la misma pantalla al entrar.</p>
-      </div>
-
       <div class="tour-wrap">
         <div class="tour" id="tour" tabindex="0" aria-label="Galería de funciones de FoldBack, desliza o usa las flechas" data-i18n-aria-label="tour.label">
           <div class="tour-card">
