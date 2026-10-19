@@ -387,6 +387,16 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
   .res-phone .shot{display:block;width:100%;height:auto;aspect-ratio:9/19;object-fit:cover;object-position:top;border-radius:26px}
   @media(max-width:900px){.res-grid{grid-template-columns:1fr;gap:40px}.res-visual{padding-bottom:12%}.res-admin{width:90%}.res-phone{width:34%}}
 
+  /* Más que una agenda */
+  .more-group{display:grid;grid-template-columns:.7fr 1.3fr;gap:48px;padding:44px 0;border-top:1px solid var(--line)}
+  .more-group:last-child{border-bottom:1px solid var(--line)}
+  .more-group h3{font-size:clamp(24px,2.6vw,30px);font-weight:700;letter-spacing:-.015em;line-height:1.15;text-wrap:balance}
+  .more-items{display:grid;grid-template-columns:1fr 1fr;gap:30px 44px}
+  .more-items dt{font-size:18px;font-weight:700;letter-spacing:-.01em;color:var(--ink)}
+  .more-items dd{margin-top:6px;font-size:16.5px;line-height:1.55;color:var(--ink-2)}
+  @media(max-width:900px){.more-group{grid-template-columns:1fr;gap:24px;padding:36px 0}}
+  @media(max-width:620px){.more-items{grid-template-columns:1fr;gap:24px}}
+
   /* Así se vive una sesión */
   .steps{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:0 32px}
   .step{position:relative;border-top:1px solid var(--line);padding-top:24px}
@@ -539,6 +549,14 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
           <p class="pain-q" data-i18n="pain.6q">A fin de mes no sabes si ganaste o perdiste.</p>
           <p class="pain-a"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="pain.6a">Ingresos, gastos y utilidad del mes, siempre actualizados.</span></p>
         </div>
+        <div class="pain">
+          <p class="pain-q" data-i18n="pain.7q">Un cliente te paga diez horas por adelantado y llevas la cuenta en una libreta.</p>
+          <p class="pain-a"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="pain.7a">Paquetes de horas que se descuentan solos al agendar.</span></p>
+        </div>
+        <div class="pain">
+          <p class="pain-q" data-i18n="pain.8q">Quieres que tu ingeniero vea su agenda, pero no tus finanzas.</p>
+          <p class="pain-a"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="pain.8a">Cada persona entra con su rol; el ingeniero ve sus sesiones y ningún monto.</span></p>
+        </div>
       </div>
     </div>
   </section>
@@ -586,6 +604,7 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
               <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="grp.2.i2">Utilidad del mes con gráficas</span></li>
               <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="grp.2.i3">Cobranza con recordatorios</span></li>
               <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="grp.2.i4">Reportes</span></li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="grp.2.i5">Rentabilidad por proyecto</span></li>
           </ul>
         </div>
         <div class="card c-span2">
@@ -596,6 +615,7 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
               <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="grp.3.i2">Tareas pendientes</span></li>
               <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="grp.3.i3">Entregas con enlace privado</span></li>
               <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="grp.3.i4">Seguimiento de cada proyecto</span></li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="grp.3.i5">Tiempo de trabajo fuera de sesión</span></li>
           </ul>
         </div>
         <div class="card c-span4">
@@ -633,6 +653,52 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
             <img class="shot" src="demo-reservar-movil.webp" width="780" height="1688" alt="Página de reservas del estudio en un celular: el cliente elige servicio, sala, duración e ingeniero" data-i18n-alt="res.alt2" loading="lazy" />
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec more-sec" id="mas">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2 data-i18n="more.h2">Más que una agenda.</h2>
+        <p data-i18n="more.p">Lo que pasa alrededor de cada sesión también tiene su lugar: tus clientes, tu equipo y la operación del día a día.</p>
+      </div>
+      <div class="more-list reveal">
+      <div class="more-group">
+        <h3 data-i18n="more.g1.h">Clientes que regresan</h3>
+        <dl class="more-items">
+          <div><dt data-i18n="more.g1.i1t">Portal del cliente</dt><dd data-i18n="more.g1.i1d">Una página privada, sin cuenta ni contraseña: sus próximas sesiones, lo que pagó y lo que debe, sus paquetes, entregas y propuestas.</dd></div>
+          <div><dt data-i18n="more.g1.i2t">Paquetes de horas</dt><dd data-i18n="more.g1.i2d">Vende horas por adelantado; al agendar eliges “Pagar con paquete” y se descuentan solas.</dd></div>
+          <div><dt data-i18n="more.g1.i3t">Regalo por lealtad</dt><dd data-i18n="more.g1.i3d">Cada cierto número de horas de sesión, tu cliente gana horas gratis que le entregas como un paquete.</dd></div>
+          <div><dt data-i18n="more.g1.i4t">Encuesta y reseña en Google</dt><dd data-i18n="more.g1.i4d">Al día siguiente de la sesión el cliente responde una encuesta. Si califica bien, le pedimos una reseña en Google; si califica bajo, te avisamos.</dd></div>
+          <div><dt data-i18n="more.g1.i5t">Prospectos</dt><dd data-i18n="more.g1.i5d">Anota a quien pregunta por precios o fechas, muévelo por etapas y conviértelo en cliente cuando reserve.</dd></div>
+          <div><dt data-i18n="more.g1.i6t">Lista de espera</dt><dd data-i18n="more.g1.i6d">Cuando un día está lleno, tu página de reservas ofrece anotarse; si se libera un horario, a los anotados les llega un correo.</dd></div>
+        </dl>
+      </div>
+      <div class="more-group">
+        <h3 data-i18n="more.g2.h">Tu equipo y sus permisos</h3>
+        <dl class="more-items">
+          <div><dt data-i18n="more.g2.i1t">Roles y permisos</dt><dd data-i18n="more.g2.i1d">Invita a tu gente con su correo y elige su rol: dueño, administrador o ingeniero. El ingeniero trabaja con agenda, clientes y entregas, sin ver dinero.</dd></div>
+          <div><dt data-i18n="more.g2.i2t">Solo mías</dt><dd data-i18n="more.g2.i2d">Un filtro muestra a cada ingeniero únicamente sus sesiones, en la lista y en el calendario.</dd></div>
+          <div><dt data-i18n="more.g2.i3t">Reporte por ingeniero</dt><dd data-i18n="more.g2.i3d">Un reporte con el trabajo de cada ingeniero.</dd></div>
+          <div><dt data-i18n="more.g2.i4t">Varios estudios, una cuenta</dt><dd data-i18n="more.g2.i4d">Si llevas más de un estudio, cambias de uno a otro desde el menú con la misma cuenta.</dd></div>
+          <div><dt data-i18n="more.g2.i5t">Avisos en tu celular</dt><dd data-i18n="more.g2.i5d">Agrega FoldBack a tu pantalla de inicio y recibe avisos de reservas y comentarios, más un resumen de tu día cada mañana.</dd></div>
+        </dl>
+      </div>
+      <div class="more-group">
+        <h3 data-i18n="more.g3.h">La operación del día a día</h3>
+        <dl class="more-items">
+          <div><dt data-i18n="more.g3.i1t">Tarifas por sala, horario e ingeniero</dt><dd data-i18n="more.g3.i1d">La tarifa se calcula sola y con desglose, al agendar y en las reservas en línea.</dd></div>
+          <div><dt data-i18n="more.g3.i2t">Sesiones que se repiten</dt><dd data-i18n="more.g3.i2d">Semanales, quincenales o mensuales, con aviso si alguna fecha choca con otra sesión.</dd></div>
+          <div><dt data-i18n="more.g3.i3t">Bloqueos y margen</dt><dd data-i18n="more.g3.i3d">Bloquea una sala, incluso cada semana, y deja tiempo entre sesiones en las reservas.</dd></div>
+          <div><dt data-i18n="more.g3.i4t">Reservas de varios días</dt><dd data-i18n="more.g3.i4d">El cliente pide varios días en una sola solicitud.</dd></div>
+          <div><dt data-i18n="more.g3.i5t">Equipo en renta</dt><dd data-i18n="more.g3.i5d">Cobra la renta de equipo por hora junto con la sesión, también desde las reservas en línea.</dd></div>
+          <div><dt data-i18n="more.g3.i6t">Consumibles y daños</dt><dd data-i18n="more.g3.i6d">Registra los consumibles que se acaban y los daños del equipo.</dd></div>
+          <div><dt data-i18n="more.g3.i7t">Calendario en tu celular</dt><dd data-i18n="more.g3.i7d">Suscribe el calendario del estudio, o el de cada persona del equipo, en Google, iPhone u Outlook.</dd></div>
+          <div><dt data-i18n="more.g3.i8t">Formulario antes de la sesión</dt><dd data-i18n="more.g3.i8d">El cliente contesta lo que tú le preguntes antes de llegar: canciones, músicos, referencias.</dd></div>
+          <div><dt data-i18n="more.g3.i9t">Recordatorios y avisos de cambio</dt><dd data-i18n="more.g3.i9d">Recordatorio 24 horas antes y, si la sesión cambia o se cancela, aviso al cliente.</dd></div>
+        </dl>
+      </div>
       </div>
     </div>
   </section>
@@ -847,6 +913,9 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
         <details><summary data-i18n="faq.q6">¿Cómo pago y cómo recibo mi comprobante?</summary><p data-i18n="faq.a6">Con tarjeta. Cada pago genera un recibo automático que te llega por correo.</p></details>
         <details><summary data-i18n="faq.q7">¿Mis clientes pueden reservar solos?</summary><p data-i18n="faq.a7">Sí. Cada estudio tiene una página de reservas con su propio enlace: el cliente elige servicio, sala, día y hora libres y deja sus datos. La solicitud aparta el horario en tu calendario como sesión pendiente y tú la confirmas o rechazas con un clic; al cliente le llega un correo.</p></details>
         <details><summary data-i18n="faq.q8">¿Qué pasa con el precio cuando se acaben los lugares de fundador?</summary><p data-i18n="faq.a8">Los primeros 30 estudios conservan su precio de fundador mientras sigan suscritos, sin importar cuánto suba después. Cuando se llenen esos lugares, los estudios nuevos pagarán el precio regular, que será mayor.</p></details>
+        <details><summary data-i18n="faq.q9">¿Puedo dar acceso a mi equipo?</summary><p data-i18n="faq.a9">Sí. Invitas a cada persona con su correo y eliges su rol: dueño, administrador o ingeniero. El ingeniero trabaja con la agenda, los clientes y las entregas, y no ve dinero; además puede ver solo sus propias sesiones.</p></details>
+        <details><summary data-i18n="faq.q10">¿Mis clientes pueden ver sus sesiones y pagos?</summary><p data-i18n="faq.a10">Sí. Cada cliente tiene un portal: una página privada con sus próximas sesiones, lo que ha pagado y lo que debe, sus paquetes de horas, sus entregas y sus propuestas. No necesita cuenta ni contraseña; tú le mandas el enlace.</p></details>
+        <details><summary data-i18n="faq.q11">¿Hay app para el celular?</summary><p data-i18n="faq.a11">FoldBack se abre desde el navegador, y puedes agregarlo a la pantalla de inicio de tu iPhone o Android para usarlo como app y recibir avisos de reservas, comentarios y el resumen de tu día. No descargas nada de una tienda de apps.</p></details>
         <details><summary data-i18n="faq.q4">¿Cómo empiezo?</summary><p data-i18n="faq.a4">Prueba el demo para conocerlo y suscríbete para activar tu cuenta. Te ayudamos con la configuración inicial y a cargar tus primeros datos.</p></details>
       </div>
     </div>

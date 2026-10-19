@@ -28,6 +28,7 @@ Studio owner works from browser (desktop or mobile), no install required, logs i
 
 ## Capabilities and Constraints
 
+- Also in the app (live as of 2026-10-19, described on the landing): client portal (private link, no account), prepaid hour packages, loyalty rewards, post-session survey with Google review request, leads by stage, waiting list, roles (owner/admin/engineer, engineers see no money), several studios per account, rates by room/time/engineer, recurring sessions, room blocks and buffers, multi-day bookings, equipment rental, consumables and damage log, calendar subscription (Google/iPhone/Outlook), pre-session form, reminders and change alerts, home-screen install with push alerts and a daily summary.
 - Multi-tenant: each studio's data is isolated with automated backups; data is exportable by the owner.
 - Branding: studio can set its own name, logo, and service catalog, reflected in proposals/receipts.
 - Currency support in proposals: MXN, USD, EUR.
