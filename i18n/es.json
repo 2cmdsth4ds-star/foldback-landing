@@ -8,7 +8,7 @@
   "hero.eyebrow": "Software para estudios de grabación",
   "hero.sub": "Sesiones, finanzas, propuestas y entregas de tu estudio en un solo panel. Adiós al Excel y a los post-its.",
   "cta.demo": "Ver demo →",
-  "cta.subscribe": "Suscribirme",
+  "cta.subscribe": "Probar 14 días gratis",
   "hero.iframe": "Demo del panel",
   "strip.1b": "1 panel",
   "strip.1s": "Todo tu estudio en un lugar",
@@ -76,7 +76,7 @@
   "price.m.l1": "Todas las funciones",
   "price.m.l2": "En la nube, respaldos incluidos",
   "price.m.l3": "Soporte por WhatsApp",
-  "price.cta": "Suscribirme",
+  "price.cta": "Probar 14 días gratis",
   "price.y.tag": "Anual · fundador, 2 meses gratis",
   "price.y.desc": "Precio de lanzamiento con el mejor descuento.",
   "price.y.l1": "Todo lo del plan mensual",
@@ -92,7 +92,7 @@
   "faq.q4": "¿Cómo empiezo?",
   "faq.a4": "Prueba el demo para conocerlo y suscríbete para activar tu cuenta. Te ayudamos con la configuración inicial y a cargar tus primeros datos.",
   "final.h2": "Pon tu estudio en orden esta semana.",
-  "final.p": "Explora el demo con datos de ejemplo y suscríbete cuando estés listo.",
+  "final.p": "Explora el demo con datos de ejemplo, o prueba FoldBack 14 días gratis con los datos de tu estudio.",
   "foot.copy": "© 2026 FoldBack · El panel para estudios de grabación",
   "meta.title": "FoldBack · El panel para tu estudio de grabación",
   "meta.description": "Sesiones, reservas en línea, finanzas, propuestas y entregas de tu estudio de grabación en un solo panel. Prueba el demo.",
@@ -258,5 +258,9 @@
   "more.g2.i6t": "Varias sedes",
   "more.g2.i6d": "Si tu estudio tiene más de un lugar, cada sede lleva su agenda, sus salas, su horario y su propio enlace de reservas, y Reportes las compara.",
   "more.g3.i10t": "Estado de cuenta por correo",
-  "more.g3.i10d": "Manda a quien te debe su estado de cuenta con un botón o cada mes; el recordatorio de la sesión trae su saldo."
+  "more.g3.i10d": "Manda a quien te debe su estado de cuenta con un botón o cada mes; el recordatorio de la sesión trae su saldo.",
+  "price.trial": "14 días gratis para estudios nuevos. Pedimos una tarjeta al empezar, pero no se cobra nada durante la prueba: si cancelas antes de que termine, no pagas.",
+  "price.tax": "Precio final, impuestos incluidos.",
+  "faq.q12": "¿Cómo funciona la prueba gratis?",
+  "faq.a12": "Al suscribirte tienes 14 días para usar FoldBack con los datos de tu estudio. Te pedimos una tarjeta al empezar, pero no se cobra nada durante la prueba. Si no cancelas antes de que termine, el primer cobro se hace ese día y la suscripción se renueva sola. Puedes cancelar cuando quieras desde Configuración → Suscripción. La prueba es solo para estudios nuevos."
 }
