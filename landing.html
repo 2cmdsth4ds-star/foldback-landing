@@ -673,6 +673,7 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
           <div><dt data-i18n="more.g1.i4t">Encuesta y reseña en Google</dt><dd data-i18n="more.g1.i4d">Al día siguiente de la sesión el cliente responde una encuesta. Si califica bien, le pedimos una reseña en Google; si califica bajo, te avisamos.</dd></div>
           <div><dt data-i18n="more.g1.i5t">Prospectos</dt><dd data-i18n="more.g1.i5d">Anota a quien pregunta por precios o fechas, muévelo por etapas y conviértelo en cliente cuando reserve.</dd></div>
           <div><dt data-i18n="more.g1.i6t">Lista de espera</dt><dd data-i18n="more.g1.i6d">Cuando un día está lleno, tu página de reservas ofrece anotarse; si se libera un horario, a los anotados les llega un correo.</dd></div>
+                  <div><dt data-i18n="more.g1.i7t">Comentarios sobre la onda</dt><dd data-i18n="more.g1.i7d">Tu cliente arrastra sobre la onda del audio para comentar un tramo exacto de la canción y elige un color; tú ves sus comentarios.</dd></div>
         </dl>
       </div>
       <div class="more-group">
@@ -683,6 +684,7 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
           <div><dt data-i18n="more.g2.i3t">Reporte por ingeniero</dt><dd data-i18n="more.g2.i3d">Un reporte con el trabajo de cada ingeniero.</dd></div>
           <div><dt data-i18n="more.g2.i4t">Varios estudios, una cuenta</dt><dd data-i18n="more.g2.i4d">Si llevas más de un estudio, cambias de uno a otro desde el menú con la misma cuenta.</dd></div>
           <div><dt data-i18n="more.g2.i5t">Avisos en tu celular</dt><dd data-i18n="more.g2.i5d">Agrega FoldBack a tu pantalla de inicio y recibe avisos de reservas y comentarios, más un resumen de tu día cada mañana.</dd></div>
+                  <div><dt data-i18n="more.g2.i6t">Varias sedes</dt><dd data-i18n="more.g2.i6d">Si tu estudio tiene más de un lugar, cada sede lleva su agenda, sus salas, su horario y su propio enlace de reservas, y Reportes las compara.</dd></div>
         </dl>
       </div>
       <div class="more-group">
@@ -697,6 +699,7 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
           <div><dt data-i18n="more.g3.i7t">Calendario en tu celular</dt><dd data-i18n="more.g3.i7d">Suscribe el calendario del estudio, o el de cada persona del equipo, en Google, iPhone u Outlook.</dd></div>
           <div><dt data-i18n="more.g3.i8t">Formulario antes de la sesión</dt><dd data-i18n="more.g3.i8d">El cliente contesta lo que tú le preguntes antes de llegar: canciones, músicos, referencias.</dd></div>
           <div><dt data-i18n="more.g3.i9t">Recordatorios y avisos de cambio</dt><dd data-i18n="more.g3.i9d">Recordatorio 24 horas antes y, si la sesión cambia o se cancela, aviso al cliente.</dd></div>
+                  <div><dt data-i18n="more.g3.i10t">Estado de cuenta por correo</dt><dd data-i18n="more.g3.i10d">Manda a quien te debe su estado de cuenta con un botón o cada mes; el recordatorio de la sesión trae su saldo.</dd></div>
         </dl>
       </div>
       </div>
@@ -872,7 +875,7 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
             <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="price.m.l2">En la nube, respaldos incluidos</span></li>
             <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="price.m.l3">Soporte por WhatsApp</span></li>
           </ul>
-          <a class="btn btn-ghost" href="#suscribirse" data-i18n="price.cta">Suscribirme</a>
+          <a class="btn btn-ghost" href="#suscribirse" data-plan="mes" data-i18n="price.cta">Suscribirme</a>
         </div>
         <div class="plan feat">
           <div class="tag" style="color:var(--accent-2)" data-i18n="price.y.tag">Anual · fundador, 2 meses gratis</div>
@@ -883,7 +886,7 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
             <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="price.y.l2">Configuración inicial con tu marca</span></li>
             <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="price.y.l3">Prioridad en soporte</span></li>
           </ul>
-          <a class="btn btn-primary" href="#suscribirse" data-i18n="price.cta">Suscribirme</a>
+          <a class="btn btn-primary" href="#suscribirse" data-plan="anio" data-i18n="price.cta">Suscribirme</a>
         </div>
       </div>
 
@@ -990,6 +993,7 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
       renderSlogan();
       renderDotLabels();
       renderPrices();
+      enlazarCompra();
       document.querySelectorAll('.lang-code').forEach(c => { c.textContent = currentLang.toUpperCase(); });
       document.querySelectorAll('.lang-menu button').forEach(b => b.setAttribute('aria-selected', String(b.dataset.code === currentLang)));
     }
@@ -998,6 +1002,21 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
     // El servidor (api/precio.js) decide la moneda por el país del visitante y
     // manda solo ese precio; aquí únicamente se pinta.
     let precio = null;
+    // Compra con Stripe. Apagada mientras la cuenta de Stripe esté en modo de prueba.
+    // En true, cada botón de plan usa el enlace "comprar" que publica la app en /api/precios
+    // (intervalo "mes" o "anio"); si falla o no hay plan, el botón sigue llevando a #suscribirse.
+    const COMPRAS_ACTIVAS = false;
+    function enlazarCompra() {
+      if (!COMPRAS_ACTIVAS) return;
+      fetch('https://app.foldback.io/api/precios?idioma=' + (currentLang === 'es' ? 'es' : 'en'))
+        .then(r => r.json())
+        .then(d => (d.planes || []).forEach(pl => {
+          const b = document.querySelector('[data-plan="' + pl.intervalo + '"]');
+          if (b && pl.comprar) b.href = pl.comprar;
+        }))
+        .catch(() => {});
+    }
+
     function renderPrices() {
       if (!precio) return;
       const cur = precio.cur;
