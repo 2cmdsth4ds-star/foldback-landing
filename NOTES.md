@@ -17,10 +17,10 @@
 - Los precios viven solo en el servidor, en `api/_precios.js` (`PRECIOS`, formato `[mensual, anual]`). `api/home.js` (función edge) sirve la portada `/` y **escribe en el HTML** el precio del país del visitante (header `x-vercel-ip-country`), más los datos estructurados `SoftwareApplication` con la misma cifra. Todos reciben la misma regla, personas y buscadores: Google rastrea desde EE. UU. y ve el precio en USD; México ve MXN. Mostrarle a Google un precio distinto al que ven las personas sería *cloaking* y está penalizado.
 - La portada es la plantilla **`landing.html`** (ya no `index.html`, porque Vercel sirve primero los archivos estáticos y `index.html` taparía la reescritura). `vercel.json` reescribe `/` hacia `/api/home`, que lee `landing.html` y le escribe el precio. `/landing.html` directo sigue existiendo, con `noindex` y sin precios escritos; ahí el navegador pide `/api/precio` como respaldo. Si `api/home` falla, redirige a `/landing.html`.
 - Sin país (robots sin geolocalización) o país sin precio propio: USD. No hay selector de moneda ni `?cc=`.
-- Hoy (precio de fundador, primeros 30 estudios, 2026-10-17): MXN 350/3,500 · USD 29/290 · EUR 29/290 · GBP 25/250 · CAD 39/390 · AUD 45/450 · BRL 99/990 · COP 79,000/790,000 · CLP 17,000/170,000 · PEN 69/690. Precio normal previsto: MXN 499 / USD 39.
-- Lo que cobre el sistema de pagos debe coincidir. El candado real es al cobrar: cada moneda solo para tarjetas/facturación de su país.
+- Hoy (precio de fundador, primeros 30 estudios): México paga **MXN 350 / 3,500** y el resto del mundo **USD 29 / 290** (2026-10-20). Se alineó a lo que soporta la app (Admin → Precios solo maneja MXN y USD); antes la página mostraba diez monedas y el Checkout habría cobrado en dólares.
+- Lo que cobre el sistema de pagos debe coincidir con `PRECIOS`. Revisar Admin → Precios cuando cambie algo.
 - El ejemplo de propuesta usa montos base en MXN (8,000 / 4,500 / 1,500) convertidos con un tipo de cambio aproximado (`CAMBIO`), no con la proporción de precios.
-- Para agregar una moneda: su línea en `PRECIOS` y `CAMBIO`, y el país en `MONEDA` (o en `EURO`), todo en `api/_precios.js`.
+- Para agregar una moneda: primero darla de alta en la app (`MONEDAS` en `src/lib/precios-plataforma.ts`) y en Stripe; luego su línea en `PRECIOS` y `CAMBIO` y el país en `MONEDA`, todo en `api/_precios.js`.
 - Para probar un país sin VPN: ejecutar `precioPara("DE")` de `api/_precios.js` o llamar al handler de `api/home.js` con un `Request` que traiga el header `x-vercel-ip-country`.
 
 ## Secciones nuevas (2026-10-17)

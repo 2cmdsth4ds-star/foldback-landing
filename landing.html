@@ -1021,9 +1021,7 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
       if (!precio) return;
       const cur = precio.cur;
       const loc = currentLang === 'es' ? 'es-MX' : currentLang === 'en' ? 'en-US' : currentLang;
-      const fmt = n => cur === 'PEN'
-        ? 'S/' + new Intl.NumberFormat(loc, { maximumFractionDigits: 0 }).format(n)
-        : new Intl.NumberFormat(loc, { style: 'currency', currency: cur, currencyDisplay: 'narrowSymbol', maximumFractionDigits: 0 }).format(n);
+      const fmt = n => new Intl.NumberFormat(loc, { style: 'currency', currency: cur, currencyDisplay: 'narrowSymbol', maximumFractionDigits: 0 }).format(n);
       document.querySelectorAll('[data-price]').forEach(el => { el.textContent = fmt(el.dataset.price === 'y' ? precio.y : precio.m); });
       document.querySelectorAll('[data-price-unit]').forEach(el => { el.textContent = t('price.unit.' + el.dataset.priceUnit, { cur }); });
       const celdas = document.querySelectorAll('[data-mock]');
