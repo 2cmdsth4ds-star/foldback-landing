@@ -875,7 +875,7 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
             <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="price.m.l2">En la nube, respaldos incluidos</span></li>
             <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="price.m.l3">Soporte por WhatsApp</span></li>
           </ul>
-          <a class="btn btn-ghost" href="#suscribirse" data-plan="mes" data-i18n="price.cta">Suscribirme</a>
+          <a class="btn btn-ghost" href="https://app.foldback.io/api/suscripcion/checkout?plan=fundador&amp;idioma=es" rel="nofollow" data-plan="mes" data-i18n="price.cta">Suscribirme</a>
         </div>
         <div class="plan feat">
           <div class="tag" style="color:var(--accent-2)" data-i18n="price.y.tag">Anual · fundador, 2 meses gratis</div>
@@ -886,7 +886,7 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
             <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="price.y.l2">Configuración inicial con tu marca</span></li>
             <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="price.y.l3">Prioridad en soporte</span></li>
           </ul>
-          <a class="btn btn-primary" href="#suscribirse" data-plan="anio" data-i18n="price.cta">Suscribirme</a>
+          <a class="btn btn-primary" href="https://app.foldback.io/api/suscripcion/checkout?plan=fundador-anual&amp;idioma=es" rel="nofollow" data-plan="anio" data-i18n="price.cta">Suscribirme</a>
         </div>
       </div>
 
@@ -1002,13 +1002,15 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
     // El servidor (api/precio.js) decide la moneda por el país del visitante y
     // manda solo ese precio; aquí únicamente se pinta.
     let precio = null;
-    // Compra con Stripe. Apagada mientras la cuenta de Stripe esté en modo de prueba.
-    // En true, cada botón de plan usa el enlace "comprar" que publica la app en /api/precios
-    // (intervalo "mes" o "anio"); si falla o no hay plan, el botón sigue llevando a #suscribirse.
-    const COMPRAS_ACTIVAS = false;
+    // Compra con Stripe: cada botón de plan lleva al Checkout de la app. El HTML ya trae el enlace
+    // directo; aquí se ajusta el idioma y, si la app responde, se usa el "comprar" que publica
+    // /api/precios, que sigue los planes de Admin → Precios (intervalo "mes" o "anio").
     function enlazarCompra() {
-      if (!COMPRAS_ACTIVAS) return;
-      fetch('https://app.foldback.io/api/precios?idioma=' + (currentLang === 'es' ? 'es' : 'en'))
+      const idioma = currentLang === 'es' ? 'es' : 'en';
+      document.querySelectorAll('[data-plan]').forEach(b => {
+        try { const u = new URL(b.href); u.searchParams.set('idioma', idioma); b.href = u.toString(); } catch (e) {}
+      });
+      fetch('https://app.foldback.io/api/precios?idioma=' + idioma)
         .then(r => r.json())
         .then(d => (d.planes || []).forEach(pl => {
           const b = document.querySelector('[data-plan="' + pl.intervalo + '"]');
