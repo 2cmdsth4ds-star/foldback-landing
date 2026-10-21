@@ -209,7 +209,7 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
   .card.shade{background:var(--surface-2)}
   @media(max-width:900px){.bento{grid-template-columns:1fr}.c-span4,.c-span3,.c-span2{grid-column:auto}}
 
-  /* Dispositivos: MacBook Pro 14", iPad 13" e iPhone 17 Pro Max mostrando el demo */
+  /* Dispositivos: MacBook Pro 14", iPad Pro 13" e iPhone Duo cerrado mostrando el demo */
   .devices{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .devices-stage{position:relative;width:100%;max-width:1000px;margin:72px auto 0;aspect-ratio:16/9.4}
   .device{position:absolute;filter:drop-shadow(0 22px 44px rgba(0,0,0,.5))}
@@ -233,19 +233,26 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
     border-radius:999px;background:#2b2b30;z-index:2}
   .ipad-frame .shot{aspect-ratio:4/3;border-radius:14px}
 
-  .device-iphone{right:1%;bottom:-4%;width:16%;z-index:3}
-  .iphone-frame{position:relative;background:#0d0d0f;border-radius:34px;padding:8px;
-    box-shadow:inset 0 0 0 1px rgba(255,255,255,.09)}
-  .iphone-island{position:absolute;top:14px;left:50%;transform:translateX(-50%);width:36%;height:8px;
-    background:#050506;border-radius:999px;z-index:2}
-  .iphone-frame .shot{aspect-ratio:9/19;border-radius:26px}
+  .device-duo{right:0;bottom:-3%;width:21%;z-index:3}
+  /* iPhone Duo cerrado: plegable tipo libro, bisagra a la izquierda, esquinas grandes a la derecha y cámara en la pantalla exterior. Dibujado en CSS, sin imágenes de Apple. */
+  .duo{position:relative;display:flex;aspect-ratio:.71;padding:2.4% 2.6% 2.4% 6.5%;
+    border-radius:4% 15% 15% 4%/2.84% 10.65% 10.65% 2.84%;
+    background:linear-gradient(135deg,#dcd4c2 0%,#b9b19f 48%,#d2cab8 100%);
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.4),inset 0 -2px 6px rgba(0,0,0,.18)}
+  .duo-hinge{position:absolute;left:0;top:0;bottom:0;width:5%;border-radius:4% 0 0 4%/2.84% 0 0 2.84%;
+    background:linear-gradient(90deg,#9a927d,#ebe5d5 42%,#b7af9c 72%,#8e8671);box-shadow:inset -1px 0 0 rgba(0,0,0,.28)}
+  .duo-screen{position:relative;flex:1;min-width:0;overflow:hidden;background:#050506;
+    border-radius:2.2% 12% 12% 2.2%/1.6% 8.6% 8.6% 1.6%;box-shadow:0 0 0 clamp(2px,.9%,4px) #050506}
+  .duo-screen .shot{position:absolute;left:0;right:0;bottom:0;top:7.5%;display:block;width:100%;height:92.5%;object-fit:cover;object-position:top}
+  .duo-cam{position:absolute;top:1.15%;right:7%;width:7%;aspect-ratio:1;border-radius:50%;background:#050506;
+    box-shadow:0 0 0 1px rgba(255,255,255,.1),inset 0 0 0 2px #14151a}
 
   @media(max-width:820px){
     .devices-stage{position:static;aspect-ratio:auto;display:flex;flex-direction:column;align-items:center;gap:40px;margin-top:48px}
     .device{position:static;transform:none;filter:drop-shadow(0 16px 32px rgba(0,0,0,.5))}
     .device-mac{width:100%;max-width:420px}
     .device-ipad{width:100%;max-width:460px}
-    .device-iphone{width:100%;max-width:190px}
+    .device-duo{width:100%;max-width:230px}
   }
 
   /* Antes / después */
@@ -388,9 +395,8 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
   .res-visual{position:relative;padding-bottom:7%}
   .res-admin{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--surface);width:88%}
   .res-admin img{display:block;width:100%;height:auto}
-  .res-phone{position:absolute;right:0;bottom:0;width:27%;filter:drop-shadow(0 22px 44px rgba(0,0,0,.55))}
-  .res-phone .shot{display:block;width:100%;height:auto;aspect-ratio:9/19;object-fit:cover;object-position:top;border-radius:26px}
-  @media(max-width:900px){.res-grid{grid-template-columns:1fr;gap:40px}.res-visual{padding-bottom:12%}.res-admin{width:90%}.res-phone{width:34%}}
+  .res-phone{position:absolute;right:0;bottom:0;width:31%;filter:drop-shadow(0 22px 44px rgba(0,0,0,.55))}
+  @media(max-width:900px){.res-grid{grid-template-columns:1fr;gap:40px}.res-visual{padding-bottom:12%}.res-admin{width:90%}.res-phone{width:38%}}
 
   /* Más que una agenda */
   .more-group{display:grid;grid-template-columns:.7fr 1.3fr;gap:48px;padding:44px 0;border-top:1px solid var(--line)}
@@ -651,12 +657,11 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
         </ul>
       </div>
       <div class="res-visual reveal">
-        <div class="res-admin"><img src="demo-reservas.webp" width="1400" height="1083" alt="Página de reservas en línea de FoldBack con el enlace del estudio y las solicitudes por atender, con botones para confirmar, rechazar o escribir por WhatsApp" data-i18n-alt="res.alt1" loading="lazy" /></div>
+        <div class="res-admin"><img src="demo-reservas.webp" data-src-en="demo-reservas-en.webp" width="1399" height="1083" alt="Página de reservas en línea de FoldBack con el enlace del estudio y las solicitudes por atender, con botones para confirmar, rechazar o escribir por WhatsApp" data-i18n-alt="res.alt1" loading="lazy" /></div>
         <div class="res-phone" aria-hidden="false">
-          <div class="iphone-frame">
-            <div class="iphone-island"></div>
-            <img class="shot" src="demo-reservar-movil.webp" width="780" height="1688" alt="Página de reservas del estudio en un celular: el cliente elige servicio, sala, duración e ingeniero" data-i18n-alt="res.alt2" loading="lazy" />
-          </div>
+          <div class="duo"><span class="duo-hinge"></span><div class="duo-screen">
+            <img class="shot" src="demo-reservar-movil.webp" data-src-en="demo-reservar-movil-en.webp" width="960" height="1408" alt="Página de reservas del estudio en un celular: el cliente elige servicio, sala, duración e ingeniero" data-i18n-alt="res.alt2" loading="lazy" /><i class="duo-cam"></i>
+          </div></div>
         </div>
       </div>
     </div>
@@ -756,7 +761,7 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
           <div class="mac-notch"></div>
           <div class="mac-screen">
             <div class="mac-screen-inner">
-              <img class="shot" src="dashboard-resumen.webp" alt="Panel de FoldBack abierto en un MacBook Pro de 14 pulgadas" data-i18n-alt="dev.mac" loading="lazy" />
+              <img class="shot" src="dashboard-resumen.webp" data-src-en="dashboard-resumen-en.webp" alt="Panel de FoldBack abierto en un MacBook Pro de 14 pulgadas" data-i18n-alt="dev.mac" loading="lazy" />
             </div>
           </div>
           <div class="mac-base"></div>
@@ -764,14 +769,13 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
         <div class="device device-ipad">
           <div class="ipad-frame">
             <div class="ipad-cam"></div>
-            <img class="shot" src="demo-ipad.webp" alt="Calendario de FoldBack abierto en un iPad de 13 pulgadas" data-i18n-alt="dev.ipad" loading="lazy" />
+            <img class="shot" src="demo-ipad.webp" data-src-en="demo-ipad-en.webp" alt="Calendario de FoldBack abierto en un iPad de 13 pulgadas" data-i18n-alt="dev.ipad" loading="lazy" />
           </div>
         </div>
-        <div class="device device-iphone">
-          <div class="iphone-frame">
-            <div class="iphone-island"></div>
-            <img class="shot" src="demo-movil.webp" alt="Lista de sesiones de FoldBack en su versión móvil, abierta en un iPhone 17 Pro Max" data-i18n-alt="dev.iphone" loading="lazy" />
-          </div>
+        <div class="device device-duo">
+          <div class="duo"><span class="duo-hinge"></span><div class="duo-screen">
+            <img class="shot" src="demo-movil.webp" data-src-en="demo-movil-en.webp" width="960" height="1408" alt="Lista de sesiones de FoldBack en la pantalla exterior de un iPhone Duo cerrado" data-i18n-alt="dev.iphone" loading="lazy" /><i class="duo-cam"></i>
+          </div></div>
         </div>
       </div>
     </div>
@@ -787,35 +791,35 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
       <div class="tour-wrap">
         <div class="tour" id="tour" tabindex="0" aria-label="Galería de funciones de FoldBack, desliza o usa las flechas" data-i18n-aria-label="tour.label">
           <div class="tour-card">
-            <div class="tour-shot"><img src="demo-sesiones-card.webp" alt="Lista de sesiones en FoldBack con fecha, horario, proyecto, cliente, tipo, sala, total, saldo y estado, y botones para cobrar, editar y cotizar" data-i18n-alt="tour.a1" loading="lazy" /></div>
+            <div class="tour-shot"><img src="demo-sesiones-card.webp" data-src-en="demo-sesiones-card-en.webp" alt="Lista de sesiones en FoldBack con fecha, horario, proyecto, cliente, tipo, sala, total, saldo y estado, y botones para cobrar, editar y cotizar" data-i18n-alt="tour.a1" loading="lazy" /></div>
             <div class="tour-body">
               <h3 data-i18n="feat.sched.h">Agenda y sesiones</h3>
               <p data-i18n="tour.sched.p">Cada sesión con su cliente, sala, total y estado de pago, sin buscar en tres chats distintos.</p>
             </div>
           </div>
           <div class="tour-card">
-            <div class="tour-shot"><img src="demo-calendario-card.webp" alt="Vista semanal del calendario de FoldBack con las sesiones y tareas de cada día, con su sala y cliente" data-i18n-alt="tour.a2" loading="lazy" /></div>
+            <div class="tour-shot"><img src="demo-calendario-card.webp" data-src-en="demo-calendario-card-en.webp" alt="Vista semanal del calendario de FoldBack con las sesiones y tareas de cada día, con su sala y cliente" data-i18n-alt="tour.a2" loading="lazy" /></div>
             <div class="tour-body">
               <h3 data-i18n="tour.cal.h">Calendario semanal</h3>
               <p data-i18n="tour.cal.p">Ve la semana completa, filtra por sala y detecta empalmes antes de que sean un problema.</p>
             </div>
           </div>
           <div class="tour-card">
-            <div class="tour-shot"><img src="demo-clientes-card.webp" alt="Tarjetas de clientes en FoldBack con nombre, tipo, contacto, número de sesiones y saldo pendiente" data-i18n-alt="tour.a3" loading="lazy" /></div>
+            <div class="tour-shot"><img src="demo-clientes-card.webp" data-src-en="demo-clientes-card-en.webp" alt="Tarjetas de clientes en FoldBack con nombre, tipo, contacto, número de sesiones y saldo pendiente" data-i18n-alt="tour.a3" loading="lazy" /></div>
             <div class="tour-body">
               <h3 data-i18n="tour.cli.h">Clientes</h3>
               <p data-i18n="tour.cli.p">Artistas, bandas y podcasts con su contacto, sus sesiones y lo que te deben, a la mano.</p>
             </div>
           </div>
           <div class="tour-card">
-            <div class="tour-shot"><img src="demo-finanzas-card.webp" alt="Finanzas del mes en FoldBack con ingresos, gastos, utilidad, por cobrar, gastos fijos por registrar, categorías y movimientos" data-i18n-alt="tour.a4" loading="lazy" /></div>
+            <div class="tour-shot"><img src="demo-finanzas-card.webp" data-src-en="demo-finanzas-card-en.webp" alt="Finanzas del mes en FoldBack con ingresos, gastos, utilidad, por cobrar, gastos fijos por registrar, categorías y movimientos" data-i18n-alt="tour.a4" loading="lazy" /></div>
             <div class="tour-body">
               <h3 data-i18n="tour.fin.h">Finanzas</h3>
               <p data-i18n="tour.fin.p">Cada ingreso y gasto con fecha, categoría y método, con la utilidad real del mes, no la que adivinas.</p>
             </div>
           </div>
           <div class="tour-card">
-            <div class="tour-shot"><img src="demo-cobranza-card.webp" alt="Panel de cobranza en FoldBack con saldos vencidos por cliente, botones de WhatsApp y correo, y las sesiones por cobrar más adelante" data-i18n-alt="tour.a5" loading="lazy" /></div>
+            <div class="tour-shot"><img src="demo-cobranza-card.webp" data-src-en="demo-cobranza-card-en.webp" alt="Panel de cobranza en FoldBack con saldos vencidos por cliente, botones de WhatsApp y correo, y las sesiones por cobrar más adelante" data-i18n-alt="tour.a5" loading="lazy" /></div>
             <div class="tour-body">
               <h3 data-i18n="feat.coll.h">Cobranza sin perseguir</h3>
               <p data-i18n="tour.coll.p">Los saldos pendientes listos con un botón para WhatsApp o correo, con el mensaje ya escrito.</p>
@@ -1002,6 +1006,7 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
       renderSlogan();
       renderDotLabels();
       renderPrices();
+      renderImages();
       enlazarCompra();
       document.querySelectorAll('.lang-code').forEach(c => { c.textContent = currentLang.toUpperCase(); });
       document.querySelectorAll('.lang-menu button').forEach(b => b.setAttribute('aria-selected', String(b.dataset.code === currentLang)));
@@ -1026,6 +1031,23 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
           if (b && pl.comprar) b.href = pl.comprar;
         }))
         .catch(() => {});
+    }
+
+    // Imágenes del demo por idioma: el HTML trae las de español; con data-src-en se cambian al inglés.
+    function renderImages() {
+      document.querySelectorAll('img[data-src-en]').forEach(img => {
+        if (!img.dataset.srcEs) img.dataset.srcEs = img.getAttribute('src');
+        const want = currentLang === 'es' ? img.dataset.srcEs : img.dataset.srcEn;
+        if (img.getAttribute('src') !== want) img.setAttribute('src', want);
+      });
+    }
+    // Idioma del demo incrustado. El demo sigue la cookie fb-idioma y, si no hay, el idioma del navegador.
+    // Solo cuando la persona elige idioma aquí se guarda esa preferencia para todo foldback.io y se recarga el demo.
+    function sincronizarDemo() {
+      const idioma = currentLang === 'es' ? 'es' : 'en';
+      try { document.cookie = 'fb-idioma=' + idioma + '; domain=.foldback.io; path=/; max-age=31536000; SameSite=Lax; Secure'; } catch (e) {}
+      const f = document.querySelector('.float-view iframe');
+      if (f && f.src) { const u = f.src; f.src = 'about:blank'; setTimeout(() => { f.src = u; }, 60); }
     }
 
     function renderPrices() {
@@ -1063,6 +1085,7 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
         currentLang = code;
         if (persist) { try { localStorage.setItem('fb-lang', code); } catch (e) {} }
         applyDict();
+        if (persist) sincronizarDemo();
       } catch (e) { /* sin traducciones disponibles: se queda el español del HTML */ }
       document.documentElement.classList.remove('i18n-pending');
     }
