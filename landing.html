@@ -165,6 +165,7 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
   .float-frame-url{margin-left:10px;font-family:var(--mono);font-size:12.5px;color:var(--muted);
     background:var(--surface-deep);border:1px solid var(--line);border-radius:7px;padding:4px 10px}
   .float-view{position:relative;height:380px;overflow:hidden}
+  .float-view img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:top left}
   .float-view iframe{position:absolute;top:0;left:0;width:143%;height:143%;border:0;
     transform:scale(.7);transform-origin:top left;pointer-events:none}
   @media(max-width:760px){.float-view{height:260px}}
@@ -181,7 +182,7 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
   .strip .cell b{display:block;font-size:36px;line-height:1.1;letter-spacing:-.02em;font-weight:700;color:var(--accent-2);text-wrap:balance}
   .strip .cell span{font-size:18.5px;line-height:1.45;color:var(--ink-2);margin-top:10px;display:block}
   @media(max-width:1000px){.strip .cell b{font-size:30px}.strip .cell span{font-size:17.5px}}
-  @media(max-width:760px){.strip .grid{grid-template-columns:repeat(2,minmax(0,1fr))}.strip .cell{padding:26px 20px}.strip .ico{width:44px;height:44px;margin-bottom:16px}.strip .cell b{font-size:clamp(22px,6.6vw,30px);overflow-wrap:anywhere}.strip .cell span{font-size:16.5px;margin-top:8px}}
+  @media(max-width:760px){.strip .grid{grid-template-columns:repeat(2,minmax(0,1fr))}.strip .cell{padding:26px 20px}.strip .ico{width:44px;height:44px;margin-bottom:16px}.strip .cell b{font-size:clamp(18px,5vw,30px);overflow-wrap:anywhere}.strip .cell span{font-size:16.5px;margin-top:8px}}
 
   /* Bento de funciones */
   .sec{padding:100px 0}
@@ -507,10 +508,10 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
       </div>
     </div>
 
-    <a class="float-frame" href="https://demo.foldback.io" target="_blank" rel="noopener">
+    <a class="float-frame" id="demo-hero" href="https://demo.foldback.io" target="_blank" rel="noopener">
       <div class="float-frame-bar"><i></i><i></i><i></i><span class="float-frame-url">demo.foldback.io</span></div>
       <div class="float-view">
-        <iframe src="https://demo.foldback.io/estudio" title="Demo del panel" data-i18n-title="hero.iframe" loading="lazy" scrolling="no" tabindex="-1"></iframe>
+        <img class="shot" src="dashboard-resumen.webp" data-src-en="dashboard-resumen-en.webp" width="2800" height="1800" alt="Demo del panel" data-i18n-alt="hero.iframe" decoding="async" />
       </div>
     </a>
     <div class="hero-spacer"></div>
@@ -1045,9 +1046,10 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
     // Solo cuando la persona elige idioma aquí se guarda esa preferencia para todo foldback.io y se recarga el demo.
     function sincronizarDemo() {
       const idioma = currentLang === 'es' ? 'es' : 'en';
-      try { document.cookie = 'fb-idioma=' + idioma + '; domain=.foldback.io; path=/; max-age=31536000; SameSite=Lax; Secure'; } catch (e) {}
       const f = document.querySelector('.float-view iframe');
-      if (f && f.src) { const u = f.src; f.src = 'about:blank'; setTimeout(() => { f.src = u; }, 60); }
+      if (!f) return;
+      try { document.cookie = 'fb-idioma=' + idioma + '; domain=.foldback.io; path=/; max-age=31536000; SameSite=Lax; Secure'; } catch (e) {}
+      if (f.src) { const u = f.src; f.src = 'about:blank'; setTimeout(() => { f.src = u; }, 60); }
     }
 
     function renderPrices() {
