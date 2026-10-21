@@ -262,5 +262,6 @@
   "price.trial": "14 days free for new studios. We ask for a card when you start, but nothing is charged during the trial: if you cancel before it ends, you pay nothing.",
   "price.tax": "Final price, taxes included.",
   "faq.q12": "How does the free trial work?",
-  "faq.a12": "When you subscribe you get 14 days to use FoldBack with your own studio’s data. We ask for a card when you start, but nothing is charged during the trial. If you do not cancel before it ends, the first charge is made that day and the subscription renews on its own. You can cancel any time from Settings → Subscription. The trial is only for new studios."
+  "faq.a12": "When you subscribe you get 14 days to use FoldBack with your own studio’s data. We ask for a card when you start, but nothing is charged during the trial. If you do not cancel before it ends, the first charge is made that day and the subscription renews on its own. You can cancel any time from Settings → Subscription. The trial is only for new studios.",
+  "price.legal": "By continuing you accept the <a href=\"https://app.foldback.io/terminos\">Terms</a> and the <a href=\"https://app.foldback.io/privacidad\">Privacy notice</a>."
 }

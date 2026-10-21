@@ -262,5 +262,6 @@
   "price.trial": "14 días gratis para estudios nuevos. Pedimos una tarjeta al empezar, pero no se cobra nada durante la prueba: si cancelas antes de que termine, no pagas.",
   "price.tax": "Precio final, impuestos incluidos.",
   "faq.q12": "¿Cómo funciona la prueba gratis?",
-  "faq.a12": "Al suscribirte tienes 14 días para usar FoldBack con los datos de tu estudio. Te pedimos una tarjeta al empezar, pero no se cobra nada durante la prueba. Si no cancelas antes de que termine, el primer cobro se hace ese día y la suscripción se renueva sola. Puedes cancelar cuando quieras desde Configuración → Suscripción. La prueba es solo para estudios nuevos."
+  "faq.a12": "Al suscribirte tienes 14 días para usar FoldBack con los datos de tu estudio. Te pedimos una tarjeta al empezar, pero no se cobra nada durante la prueba. Si no cancelas antes de que termine, el primer cobro se hace ese día y la suscripción se renueva sola. Puedes cancelar cuando quieras desde Configuración → Suscripción. La prueba es solo para estudios nuevos.",
+  "price.legal": "Al continuar aceptas los <a href=\"https://app.foldback.io/terminos\">Términos</a> y el <a href=\"https://app.foldback.io/privacidad\">Aviso de privacidad</a>."
 }
