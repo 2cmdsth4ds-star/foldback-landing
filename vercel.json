@@ -20,6 +20,26 @@
       "source": "/demo/:path*",
       "destination": "https://demo.foldback.io/:path*",
       "permanent": false
+    },
+    {
+      "source": "/terminos",
+      "destination": "https://app.foldback.io/terminos",
+      "permanent": false
+    },
+    {
+      "source": "/terms",
+      "destination": "https://app.foldback.io/terminos",
+      "permanent": false
+    },
+    {
+      "source": "/privacidad",
+      "destination": "https://app.foldback.io/privacidad",
+      "permanent": false
+    },
+    {
+      "source": "/privacy",
+      "destination": "https://app.foldback.io/privacidad",
+      "permanent": false
     }
   ],
   "headers": [
