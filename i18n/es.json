@@ -276,5 +276,17 @@
   "dia.l2": "Por confirmar",
   "dia.l3": "Terminada",
   "dia.nota": "Estudio de ejemplo con datos de muestra.",
-  "dia.aria": "El día de un estudio de ejemplo: tres salas con sus sesiones, la siguiente resaltada y una línea que marca la hora actual."
+  "dia.aria": "El día de un estudio de ejemplo: tres salas con sus sesiones, la siguiente resaltada y una línea que marca la hora actual.",
+  "dia.s1n": "Sala A",
+  "dia.s1l": "Roma Norte",
+  "dia.s1i": "S",
+  "dia.s2n": "Cabina",
+  "dia.s2l": "Roma Norte",
+  "dia.s2i": "C",
+  "dia.s3n": "Sala B",
+  "dia.s3l": "Coyoacán",
+  "dia.s3i": "S",
+  "dia.c1": "Los Neón",
+  "dia.c2": "La Sobremesa",
+  "dia.c3": "Carla Mendoza"
 }

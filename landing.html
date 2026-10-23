@@ -521,6 +521,7 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
       <div class="float-frame-bar"><i></i><i></i><i></i><span class="float-frame-url">demo.foldback.io</span></div>
       <div class="float-view">
         <img class="shot" src="dashboard-resumen.webp" data-src-en="dashboard-resumen-en.webp" width="2800" height="1800" alt="Demo del panel" data-i18n-alt="hero.iframe" decoding="async" />
+        <iframe title="Demo del panel" data-i18n-title="hero.iframe" loading="lazy" scrolling="no" tabindex="-1"></iframe>
       </div>
     </a>
     <div class="hero-spacer"></div>
@@ -663,24 +664,24 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
         <div class="dia-cuerpo" role="region" tabindex="0" aria-label="El día de un estudio de ejemplo: tres salas con sus sesiones, la siguiente resaltada y una línea que marca la hora actual." data-i18n-aria-label="dia.aria">
         <div class="dia-regla"><span></span><div class="dia-horas"><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span></div></div>
         <div class="dia-fila">
-          <div class="dia-sala"><span class="ini">S</span><div><b>Sala A</b><small>Roma Norte</small></div></div>
+          <div class="dia-sala"><span class="ini" data-i18n="dia.s1i">S</span><div><b data-i18n="dia.s1n">Sala A</b><small data-i18n="dia.s1l">Roma Norte</small></div></div>
           <div class="dia-pista">
-            <div class="dia-bloque hecho" style="left:8.33%;width:25%"><b>Los Neón</b><span data-i18n="dia.t1">11:00 a 14:00</span></div>
+            <div class="dia-bloque hecho" style="left:8.33%;width:25%"><b data-i18n="dia.c1">Los Neón</b><span data-i18n="dia.t1">11:00 a 14:00</span></div>
             <div class="dia-libre" style="left:52%" data-i18n-html="dia.libre">Libre el resto del día. <a href="#reservas">Ofrecer</a></div>
             <div class="dia-ahora primera" style="left:47.5%"><span>15:42</span></div>
           </div>
         </div>
         <div class="dia-fila">
-          <div class="dia-sala"><span class="ini">C</span><div><b>Cabina</b><small>Roma Norte</small></div></div>
+          <div class="dia-sala"><span class="ini" data-i18n="dia.s2i">C</span><div><b data-i18n="dia.s2n">Cabina</b><small data-i18n="dia.s2l">Roma Norte</small></div></div>
           <div class="dia-pista">
-            <div class="dia-bloque siguiente" style="left:50%;width:12.5%"><b>La Sobremesa</b><span data-i18n="dia.t2">16:00 a 17:30</span></div>
+            <div class="dia-bloque siguiente" style="left:50%;width:12.5%"><b data-i18n="dia.c2">La Sobremesa</b><span data-i18n="dia.t2">16:00 a 17:30</span></div>
             <div class="dia-ahora" style="left:47.5%"></div>
           </div>
         </div>
         <div class="dia-fila">
-          <div class="dia-sala"><span class="ini">S</span><div><b>Sala B</b><small>Coyoacán</small></div></div>
+          <div class="dia-sala"><span class="ini" data-i18n="dia.s3i">S</span><div><b data-i18n="dia.s3n">Sala B</b><small data-i18n="dia.s3l">Coyoacán</small></div></div>
           <div class="dia-pista">
-            <div class="dia-bloque pendiente" style="left:66.66%;width:16.66%"><b>Carla Mendoza</b><span data-i18n="dia.t3">18:00 a 20:00</span></div>
+            <div class="dia-bloque pendiente" style="left:66.66%;width:16.66%"><b data-i18n="dia.c3">Carla Mendoza</b><span data-i18n="dia.t3">18:00 a 20:00</span></div>
             <div class="dia-ahora" style="left:47.5%"></div>
           </div>
         </div>
@@ -1059,6 +1060,7 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
       renderDotLabels();
       renderPrices();
       renderImages();
+      demoEnVivo();
       enlazarCompra();
       document.querySelectorAll('.lang-code').forEach(c => { c.textContent = currentLang.toUpperCase(); });
       document.querySelectorAll('.lang-menu button').forEach(b => b.setAttribute('aria-selected', String(b.dataset.code === currentLang)));
@@ -1093,16 +1095,14 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
         if (img.getAttribute('src') !== want) img.setAttribute('src', want);
       });
     }
-    // Idioma del demo incrustado. El demo sigue la cookie fb-idioma y, si no hay, el idioma del navegador.
-    // Solo cuando la persona elige idioma aquí se guarda esa preferencia para todo foldback.io y se recarga el demo.
-    function sincronizarDemo() {
-      const idioma = currentLang === 'es' ? 'es' : 'en';
+    // Demo en vivo del hero: solo en pantallas anchas (en celular se queda la captura, que pesa menos) y en el idioma
+    // elegido, porque el demo tiene un estudio en español (Estudio Aurora) y otro en inglés (Aurora Studios).
+    function demoEnVivo() {
       const f = document.querySelector('.float-view iframe');
-      if (!f) return;
-      try { document.cookie = 'fb-idioma=' + idioma + '; domain=.foldback.io; path=/; max-age=31536000; SameSite=Lax; Secure'; } catch (e) {}
-      if (f.src) { const u = f.src; f.src = 'about:blank'; setTimeout(() => { f.src = u; }, 60); }
+      if (!f || !window.matchMedia('(min-width:761px)').matches) return;
+      const u = 'https://demo.foldback.io/api/demo/entrar?lang=' + (currentLang === 'es' ? 'es' : 'en') + '&next=%2Festudio';
+      if (f.getAttribute('src') !== u) f.setAttribute('src', u);
     }
-
     function renderPrices() {
       if (!precio) return;
       const cur = precio.cur;
@@ -1138,7 +1138,6 @@ if(c!=='es'){d.classList.add('i18n-pending');setTimeout(function(){d.classList.r
         currentLang = code;
         if (persist) { try { localStorage.setItem('fb-lang', code); } catch (e) {} }
         applyDict();
-        if (persist) sincronizarDemo();
       } catch (e) { /* sin traducciones disponibles: se queda el español del HTML */ }
       document.documentElement.classList.remove('i18n-pending');
     }

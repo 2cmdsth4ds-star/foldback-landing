@@ -276,5 +276,17 @@
   "dia.l2": "To confirm",
   "dia.l3": "Done",
   "dia.nota": "Sample studio with sample data.",
-  "dia.aria": "The day of a sample studio: three rooms with their sessions, the next one highlighted and a line marking the current time."
+  "dia.aria": "The day of a sample studio: three rooms with their sessions, the next one highlighted and a line marking the current time.",
+  "dia.s1n": "Room A",
+  "dia.s1l": "Silver Lake",
+  "dia.s1i": "R",
+  "dia.s2n": "Booth",
+  "dia.s2l": "Silver Lake",
+  "dia.s2i": "B",
+  "dia.s3n": "Room B",
+  "dia.s3l": "Burbank",
+  "dia.s3i": "R",
+  "dia.c1": "The Neon Lights",
+  "dia.c2": "Late Table Podcast",
+  "dia.c3": "Carla Mendes"
 }
