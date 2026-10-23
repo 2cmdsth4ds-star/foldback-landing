@@ -263,5 +263,18 @@
   "price.tax": "Precio final, impuestos incluidos.",
   "faq.q12": "¿Cómo funciona la prueba gratis?",
   "faq.a12": "Al suscribirte tienes 14 días para usar FoldBack con los datos de tu estudio. Te pedimos una tarjeta al empezar, pero no se cobra nada durante la prueba. Si no cancelas antes de que termine, el primer cobro se hace ese día y la suscripción se renueva sola. Puedes cancelar cuando quieras desde Configuración → Suscripción. La prueba es solo para estudios nuevos.",
-  "price.legal": "Al continuar aceptas los <a href=\"https://app.foldback.io/terminos\">Términos</a> y el <a href=\"https://app.foldback.io/privacidad\">Aviso de privacidad</a>."
+  "price.legal": "Al continuar aceptas los <a href=\"https://app.foldback.io/terminos\">Términos</a> y el <a href=\"https://app.foldback.io/privacidad\">Aviso de privacidad</a>.",
+  "dia.h2": "Todo el día de tu estudio, sala por sala.",
+  "dia.p": "Cada sesión en su sala y a su hora, con la línea de ahora para ver qué sigue. Lo que está libre se ve de un vistazo.",
+  "dia.t": "El día por sala",
+  "dia.rango": "10:00 a 22:00",
+  "dia.t1": "11:00 a 14:00",
+  "dia.t2": "16:00 a 17:30",
+  "dia.t3": "18:00 a 20:00",
+  "dia.libre": "Libre el resto del día. <a href=\"#reservas\">Ofrecer</a>",
+  "dia.l1": "Confirmada",
+  "dia.l2": "Por confirmar",
+  "dia.l3": "Terminada",
+  "dia.nota": "Estudio de ejemplo con datos de muestra.",
+  "dia.aria": "El día de un estudio de ejemplo: tres salas con sus sesiones, la siguiente resaltada y una línea que marca la hora actual."
 }

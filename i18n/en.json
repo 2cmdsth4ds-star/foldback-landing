@@ -263,5 +263,18 @@
   "price.tax": "Final price, taxes included.",
   "faq.q12": "How does the free trial work?",
   "faq.a12": "When you subscribe you get 14 days to use FoldBack with your own studio’s data. We ask for a card when you start, but nothing is charged during the trial. If you do not cancel before it ends, the first charge is made that day and the subscription renews on its own. You can cancel any time from Settings → Subscription. The trial is only for new studios.",
-  "price.legal": "By continuing you accept the <a href=\"https://app.foldback.io/terminos\">Terms</a> and the <a href=\"https://app.foldback.io/privacidad\">Privacy notice</a>."
+  "price.legal": "By continuing you accept the <a href=\"https://app.foldback.io/terminos\">Terms</a> and the <a href=\"https://app.foldback.io/privacidad\">Privacy notice</a>.",
+  "dia.h2": "Your studio’s whole day, room by room.",
+  "dia.p": "Every session in its room and at its time, with a now line to see what is next. What is free shows at a glance.",
+  "dia.t": "The day by room",
+  "dia.rango": "10:00 to 22:00",
+  "dia.t1": "11:00 to 14:00",
+  "dia.t2": "16:00 to 17:30",
+  "dia.t3": "18:00 to 20:00",
+  "dia.libre": "Free for the rest of the day. <a href=\"#reservas\">Offer it</a>",
+  "dia.l1": "Confirmed",
+  "dia.l2": "To confirm",
+  "dia.l3": "Done",
+  "dia.nota": "Sample studio with sample data.",
+  "dia.aria": "The day of a sample studio: three rooms with their sessions, the next one highlighted and a line marking the current time."
 }

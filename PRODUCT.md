@@ -41,7 +41,7 @@ Studio owner works from browser (desktop or mobile), no install required, logs i
 - Logo: `icon.svg` (waveform mark, used as favicon and as the icon half of the live nav/hero wordmark lockup) + a live HTML "Fold<span>Back</span>" text lockup (white + accent-2 blue), not a flattened image — this lets the nav logo and the animated hero logo stay pixel-identical and easy to re-theme. The old flattened StudioPulse/Blacklab logo files were deleted.
 - Contact email: hola@foldback.io.
 - Production domain: https://foldback.io (landing, Vercel project `foldback-landing`); GitHub repo `2cmdsth4ds-star/foldback-landing`.
-- Existing dark theme with blue accent (`--accent:#3987e5`) is the current committed visual direction; treat as incumbent system rather than open ground unless the user asks for a redesign.
+- Visual direction (since 2026-10-23, same as the app): neutral graphite `#111214`, one blue accent `#4c8ee6`, Atkinson Hyperlegible Next only, 12 px / 8 px radii, no gradients, glows, pills or monospace; specs in the app repo `propuesta-diseno/ESPECIFICACIONES-DISENO.md`. Previously: dark theme with blue accent (`--accent:#3987e5`); treat as incumbent system rather than open ground unless the user asks for a redesign.
 
 ## Evidence on Hand
 
